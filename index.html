@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Create a simple CodeMirror instance -->
+    <link rel="stylesheet" href="codemirror-5.65.16/addon/hint/show-hint.css">
+    <link rel="stylesheet" href="codemirror-5.65.16/lib/codemirror.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./codemirror-5.65.16/theme/zenburn.css">
+    <script src="https://kit.fontawesome.com/686463c8ce.js" crossorigin="anonymous"></script>
+
+
+    <title>CSS Game</title>
+</head>
+<body>
+    <div class="outer-container">
+        <section class="game-screen">
+            <h1 class="title">your target Element</h1>
+            <div>
+                <div id="myDiv" class="styled-div">This is a normal div element</div>
+            </div>
+            
+            <div class="target">
+                <h1 class="title">your styled Element</h1>
+                <div id="toShow">
+                    
+                </div>
+            </div>
+        </section>
+        <section class="game-info">
+            <div class="header">
+                <div>
+                    <h1 class="title">CSS Ninja Dojo</h1>
+                </div>
+                <div class="level-selection">
+                    <span class="arrow-left">
+                        <i class="fa-solid fa-angle-left" ></i>
+                    </span>
+                    <span class="level-element">current level</span>
+                    <span class="arrow-right">
+                        <i class="fa-solid fa-angle-right" ></i>
+                    </span>
+                </div>
+            </div>
+            <p class="level-description">
+                this level is somehow tricky you need to apply 
+                every thing you have learned so far to put it in place
+                but you can do it !!
+            </p>
+            <h4>use these css styles to make the target</h4>
+            <ul class="css-tips">
+                <li>justify content</li>
+                <li>align-self</li>
+                <li>flex-direction</li>
+                <li>flex-wrap</li>
+                <li>order</li>
+                <li>align-self</li>
+            </ul>
+            <div class="code-container">
+                <div class="mode-changer">
+                    <button id="css-mode-button" class="mode-button" name="css" >CSS</button>
+                    <button id="js-mode-button" class="mode-button" name="js">JS</button>
+                </div>
+                <div id="css-container"  >
+                    <textarea  id="css-code-editor"  ></textarea>
+                </div>
+                <div id="js-container" >
+                    <div id="js-code-editor" ></div>
+                </div>
+                <button id="run-code" >Run</button>
+            </div>
+        </section>
+
+    </div>  
+    <script src="codemirror-5.65.16/lib/codemirror.js"></script>
+    <script src="codemirror-5.65.16/mode/css/css.js"></script>
+    <script src="codemirror-5.65.16/mode/xml/xml.js"></script>
+    <script src="codemirror-5.65.16/addon/edit/closetag.js"></script>
+    <script src="codemirror-5.65.16/addon/hint/show-hint.js"></script>
+    <script src="codemirror-5.65.16/addon/hint/css-hint.js"></script>
+
+    <script src="./script.js"></script>
+    
+
+</body>
+</html>
