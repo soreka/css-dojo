@@ -1,3 +1,6 @@
+
+
+import {feedChallange} from "./challangeCreator.js" 
 var cssCodeMirror = CodeMirror.fromTextArea(
   document.getElementById("css-code-editor"),
   {
@@ -9,6 +12,7 @@ var cssCodeMirror = CodeMirror.fromTextArea(
     extraKeys: { "Ctrl-Space": "autocomplete" },
     
   }
+  
 );
 var htmlCodeMirror = CodeMirror(document.getElementById("js-code-editor"), {
   value: "<!-- write your HTML Here -->\n",
@@ -42,6 +46,7 @@ myButton.onclick = runCode;
 
 function changeMode() {
   const cssEditor = document.getElementById("css-container");
+  const jsEditor = document.getElementById("js-container")
   const buttonName = this.name;
   if (buttonName === "css" && cssEditor.style.display == "") {
     cssCodeMirror.getWrapperElement().style.display = "block";
@@ -53,7 +58,15 @@ function changeMode() {
   }
 }
 
+
+
 const cssModeButton = document.getElementById("css-mode-button");
 const jsModeButton = document.getElementById("js-mode-button");
 cssModeButton.onclick = changeMode;
 jsModeButton.onclick = changeMode;
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  feedChallange()
+});

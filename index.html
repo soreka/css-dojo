@@ -6,7 +6,7 @@
     <!-- Create a simple CodeMirror instance -->
     <link rel="stylesheet" href="codemirror-5.65.16/addon/hint/show-hint.css">
     <link rel="stylesheet" href="codemirror-5.65.16/lib/codemirror.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles/styles.css">
     <link rel="stylesheet" href="./codemirror-5.65.16/theme/zenburn.css">
     <script src="https://kit.fontawesome.com/686463c8ce.js" crossorigin="anonymous"></script>
 
@@ -24,12 +24,12 @@
             <div class="target">
                 <h1 class="title">your styled Element</h1>
                 <div id="toShow">
-                    
+
                 </div>
             </div>
         </section>
         <section class="game-info">
-            <div class="header">
+            <div class="header" name="header">
                 <div>
                     <h1 class="title">CSS Ninja Dojo</h1>
                 </div>
@@ -43,20 +43,9 @@
                     </span>
                 </div>
             </div>
-            <p class="level-description">
-                this level is somehow tricky you need to apply 
-                every thing you have learned so far to put it in place
-                but you can do it !!
-            </p>
+            <p class="level-description" id="level-description"></p>
             <h4>use these css styles to make the target</h4>
-            <ul class="css-tips">
-                <li>justify content</li>
-                <li>align-self</li>
-                <li>flex-direction</li>
-                <li>flex-wrap</li>
-                <li>order</li>
-                <li>align-self</li>
-            </ul>
+            <ul class="css-tips" id="css-tips"></ul>
             <div class="code-container">
                 <div class="mode-changer">
                     <button id="css-mode-button" class="mode-button" name="css" >CSS</button>
@@ -80,7 +69,7 @@
     <script src="codemirror-5.65.16/addon/hint/show-hint.js"></script>
     <script src="codemirror-5.65.16/addon/hint/css-hint.js"></script>
 
-    <script src="./script.js"></script>
+    <script type="module" src="./js/index.js"></script>
     
 
 </body>

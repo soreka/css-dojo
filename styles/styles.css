@@ -116,7 +116,7 @@ html,body{
     background-color: #0069d9; /* Darken background on hover */
 
 }
-
+/* 
 #myDiv {
     width: 300px; /* Set the width */
     height: 150px; /* Set the height */
@@ -124,7 +124,9 @@ html,body{
     border: 1px solid #ccc; /* Add a border */
     padding: 10px; /* Add padding */
     margin: 10px; /* Add margin */
+    
   }
+ */
 
   .styled-div {
     width: 300px; /* Adjust width as needed */
