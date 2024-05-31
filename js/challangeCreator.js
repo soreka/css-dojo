@@ -1,9 +1,9 @@
 import challanges from "./challanges.js";
-export function feedChallange(level = 1) {
+export function feedChallange(level = 2) {
     let challange = getChallange(level);
     let description = document.getElementById("level-description")
     let cssTips = document.getElementById("css-tips")
-    description.textContent = challange.description
+    description.textContent = "Challange :" + challange.description
     for(let style in challange.styles){
         const liElement = document.createElement("li")
         liElement.textContent = String(style)
