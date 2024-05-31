@@ -29,14 +29,14 @@ const challenges = [
   },
 
   // Level 2 Challenges (and so on...)
-  {
-    level: 2,
-    description: "Create a linear gradient background for the box (light blue to dark blue).",
-    solution: 'background-image: linear-gradient(to bottom, lightblue, darkblue);',
-    styles: {
-      backgroundImage: 'linear-gradient(to bottom, lightblue, darkblue)'
-    }
-  },
+    {
+      level: 2,
+      description: "Create a linear gradient background for the box (light blue to dark blue).",
+      solution: 'background-image: linear-gradient(to bottom, lightblue, darkblue);',
+      styles: {
+        backgroundImage: 'linear-gradient(to bottom, lightblue, darkblue)'
+      }
+    },
   // ... Add remaining challenges following the same format ...
 
   {

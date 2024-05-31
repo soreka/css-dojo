@@ -7,7 +7,7 @@ var cssCodeMirror = CodeMirror.fromTextArea(
     value: "/*Write Your Styles Here #!#!*/\n",
     mode: "css",
     autoCloseTags: true,
-    theme: "zenburn",
+    theme: "ttcn",
     lineNumbers: true,
     extraKeys: { "Ctrl-Space": "autocomplete" },
     
@@ -18,7 +18,7 @@ var htmlCodeMirror = CodeMirror(document.getElementById("js-code-editor"), {
   value: "<!-- write your HTML Here -->\n",
   mode: "xml",
   autoCloseTags: true,
-  theme: "zenburn",
+  theme: "xq-light",
   lineNumbers: true,
   extraKeys: { "Ctrl-Space": "autocomplete" },
  
