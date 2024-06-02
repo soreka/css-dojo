@@ -1,9 +1,10 @@
 import challanges from "./challanges.js";
 
 let basicStyles = ["width", "height", "background-color"];
-
+const currentChallange = null
 export function feedChallange(level = 2) {
   let challange = getChallange(level);
+  currentChallange = challange
   let description = document.getElementById("level-description");
   let cssTips = document.getElementById("css-tips");
   description.textContent = "Challange :" + challange.description;

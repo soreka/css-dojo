@@ -58,7 +58,19 @@ const challenges = [
       }
     `,
     styles: {
-      // All styles defined within the solution string
+      "nav" : {
+        display: "flex",
+        "justify-content": "space-between",
+        padding: "10px"
+      },
+      "nav a ":{
+        color: "#333",
+        "text-decoration": none,
+        padding: "10px"
+      },
+      "nav a:hover":{
+        color: "#009900"
+      }
     }
   },
   {
