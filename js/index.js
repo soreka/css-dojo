@@ -1,6 +1,4 @@
-
-
-import {feedChallange,currentChallange} from "./challangeCreator.js" 
+import {feedChallange} from "./challangeCreator.js" 
 var cssCodeMirror = CodeMirror.fromTextArea(
   document.getElementById("css-code-editor"),
   {
