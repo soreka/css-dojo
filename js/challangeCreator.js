@@ -1,8 +1,8 @@
 import challanges from "./challanges.js";
 
 let basicStyles = ["width", "height", "background-color"];
-export function feedChallange(level = 1,type = 'shadows') {
-  let challange = getChallange(type,level); 
+export function feedChallange(level = 1, type = 'shadows') {
+  let challange = getChallange(type, level);
   console.log(challange);
   // get the target elements
   let description = document.getElementById("level-description");
@@ -28,7 +28,7 @@ export function feedChallange(level = 1,type = 'shadows') {
   //     .filter((e) => e != "")
   //     .map((e) => e.split(":"))
   //     .map((e) => e[0]);
-}                                                                                                                                         
+}
 
 function buildStylesString(stylesObj) {
   let styles = "";
@@ -73,8 +73,8 @@ function addBasicStyles(styleObj) {
 
 //// get random challange from the challanges  object with the wanted level 
 
-function getChallange(type = "shadows",level) {
-  console.log(challanges[type]);
+function getChallange(type = "shadows", level) {
+  // console.log(challanges[type]);
   let targetLevels = challanges[type].filter((lvl) => lvl.level == level);
   let randIndex = getRandomInt(0, targetLevels.length - 1);
   return targetLevels[randIndex];

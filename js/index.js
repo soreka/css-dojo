@@ -31,9 +31,9 @@ function createStyle(cssText) {
 
 //// code for viewing the code live on the game screen
 function runCode() {
-  if (currentChallange === null){
-    console.log("there is no challange yet ");
-  }
+  // if (currentChallange === null){
+  //   console.log("there is no challange yet ");
+  // }
   let styleCode = cssCodeMirror.getValue();
   let htmlCode = htmlCodeMirror.getValue();
   let viewElement = document.getElementById("toShow");

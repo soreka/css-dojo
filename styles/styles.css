@@ -165,6 +165,67 @@ html,body{
     width: 70%;
 
 }
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: rgb(38, 61, 83);
+    margin: 15% auto;
+    padding: 20px;
+    width: 30%;
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.level-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+.level-button1 {
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px; 
+    border: none; 
+    cursor: pointer; 
+    color: white;
+}
+
+.level-button1:focus {
+    outline: none; 
+}
+
+.level-button1:hover {
+    background-color: grey;
+}
+
+
 
 
 /* code editors styles */
