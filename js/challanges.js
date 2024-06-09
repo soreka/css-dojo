@@ -1235,6 +1235,101 @@ const challenges = {
         }
       }
     ],
+    position: [
+      {
+        level: 1,
+        description: "Set the element's position to relative.",
+        solution: "position: relative;",
+        styles: {
+          position: "relative",
+        }
+      },
+      {
+        level: 2,
+        description: "Position the element 20 pixels from the top of its containing element.",
+        solution: "position: relative; top: 20px;",
+        styles: {
+          position: "relative",
+          top: "20px",
+        }
+      },
+      {
+        level: 3,
+        description: "Float the element to the right within its containing element.",
+        solution: "float: right;",
+        styles: {
+          float: "right",
+        }
+      },
+      {
+        level: 4,
+        description: "Center the element horizontally within its containing element.",
+        solution: "position: absolute; left: 50%; transform: translateX(-50%);",
+        styles: {
+          position: "absolute",
+          left: "50%",
+          transform: "translateX(-50%)",
+        }
+      },
+      {
+        level: 5,
+        description: "Place the element at the top-right corner of its containing element.",
+        solution: "position: absolute; top: 0; right: 0;",
+        styles: {
+          position: "absolute",
+          top: "0",
+          right: "0",
+        }
+      },
+      {
+        level: 6,
+        description: "Stack the element on top of its siblings.",
+        solution: "position: absolute; z-index: 1;",
+        styles: {
+          position: "absolute",
+          zIndex: "1",
+        }
+      },
+      {
+        level: 7,
+        description: "Overlap the element with its adjacent sibling.",
+        solution: "position: relative; left: -20px;",
+        styles: {
+          position: "relative",
+          left: "-20px",
+        }
+      },
+      {
+        level: 8,
+        description: "Make the element stay fixed at the bottom of the viewport.",
+        solution: "position: fixed; bottom: 0;",
+        styles: {
+          position: "fixed",
+          bottom: "0",
+        }
+      },
+      {
+        level: 9,
+        description: "Create a sticky element that remains within its container while scrolling.",
+        solution: "position: sticky; top: 0;",
+        styles: {
+          position: "sticky",
+          top: "0",
+        }
+      },
+      {
+        level: 10,
+        description: "Make the element cover the entire viewport.",
+        solution: "position: fixed; top: 0; left: 0; width: 100%; height: 100%;",
+        styles: {
+          position: "fixed",
+          top: "0",
+          left: "0",
+          width: "100%",
+          height: "100%",
+        }
+      },
+    ],
     navigationBar: [
       {
         level: 1,
