@@ -1,5 +1,5 @@
 const challenges = {
-  beginner : {
+  beginner: {
     colors: [
       {
         level: 1,
@@ -785,7 +785,7 @@ const challenges = {
       }
     ]
   },
-  intermediate : {
+  intermediate: {
     opacity: [
       {
         level: 1,
@@ -884,7 +884,7 @@ const challenges = {
           }
         }
       }
-    ], 
+    ],
     lists: [
       {
         level: 1,
@@ -1581,7 +1581,7 @@ const challenges = {
       }
     ]
   },
-  advanced : {
+  advanced: {
     multipleColumns: [
       {
         level: 1,
@@ -2161,9 +2161,351 @@ const challenges = {
           textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)"
         }
       }
+    ], flexBox: [
+      {
+        level: 1,
+        description: "Center a box using Flexbox.",
+        solution: 'display: flex; justify-content: center; align-items: center;',
+        styles: {
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }
+      },
+      {
+        level: 2,
+        description: "Create a flexible layout with space between items.",
+        solution: 'display: flex; justify-content: space-between;',
+        styles: {
+          display: 'flex',
+          justifyContent: 'space-between'
+        }
+      },
+      {
+        level: 3,
+        description: "Space all items evenly along the main axis.",
+        solution: "justify-content: space-between;",
+        styles: {
+          justifyContent: "space-between"
+        }
+      },
+      {
+        level: 4,
+        description: "Distribute extra space evenly among items along the main axis.",
+        solution: "justify-content: space-around;",
+        styles: {
+          justifyContent: "space-around"
+        }
+      },
+      {
+        level: 5,
+        description: "Align all items in the flex container to the end of the main axis.",
+        solution: "justify-content: flex-end;",
+        styles: {
+          justifyContent: "flex-end"
+        }
+      },
+      {
+        level: 6,
+        description: "Make items in the flex container align to the start of the cross axis.",
+        solution: "align-items: flex-start;",
+        styles: {
+          alignItems: "flex-start"
+        }
+      },
+      {
+        level: 7,
+        description: "Center all items in the flex container along the cross axis.",
+        solution: "align-items: center;",
+        styles: {
+          alignItems: "center"
+        }
+      },
+      {
+        level: 8,
+        description: "Make items in the flex container align to the end of the cross axis.",
+        solution: "align-items: flex-end;",
+        styles: {
+          alignItems: "flex-end"
+        }
+      },
+      {
+        level: 9,
+        description: "Stretch all items in the flex container to fill the cross axis.",
+        solution: "align-items: stretch;",
+        styles: {
+          alignItems: "stretch"
+        }
+      },
+      {
+        level: 10,
+        description: "Align the items in the flex container at the baseline of the cross axis.",
+        solution: "align-items: baseline;",
+        styles: {
+          alignItems: "baseline"
+        }
+      }
     ],
+    animations: [
+      {
+        level: 1,
+        description: "Create a simple fade-in animation.",
+        solution: `
+            @keyframes fadeIn {
+              from { opacity: 0; }
+              to { opacity: 1; }
+            }
+            animation: fadeIn 1s ease-in-out;
+          `,
+        styles: {
+          animation: 'fadeIn 1s ease-in-out'
+        },
+        keyframes: `
+            @keyframes fadeIn {
+              from { opacity: 0; }
+              to { opacity: 1; }
+            }
+          `
+      },
+      {
+        level: 2,
+        description: "Create a bouncing animation.",
+        solution: `
+            @keyframes bounce {
+              0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+              40% { transform: translateY(-30px); }
+              60% { transform: translateY(-15px); }
+            }
+            animation: bounce 2s infinite;
+          `,
+        styles: {
+          animation: 'bounce 2s infinite'
+        },
+        keyframes: `
+            @keyframes bounce {
+              0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+              40% { transform: translateY(-30px); }
+              60% { transform: translateY(-15px); }
+            }
+          `
+      },
+      {
+        level: 3,
+        description: "Create a bouncing animation effect.",
+        solution: "animation: bounce 0.5s infinite alternate;",
+        styles: {
+          animation: "bounce 0.5s infinite alternate"
+        },
+        keyframes: `
+          @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-20px); }
+          }
+        `
+      },
+      {
+        level: 4,
+        description: "Fade in an element smoothly over 1 second.",
+        solution: "animation: fadeIn 1s;",
+        styles: {
+          animation: "fadeIn 1s"
+        },
+        keyframes: `
+          @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+          }
+        `
+      },
+      {
+        level: 5,
+        description: "Make an element move from left to right infinitely.",
+        solution: "animation: moveRight 3s linear infinite;",
+        styles: {
+          animation: "moveRight 3s linear infinite"
+        },
+        keyframes: `
+          @keyframes moveRight {
+            0% { left: 0; }
+            100% { left: 100%; }
+          }
+        `
+      },
+      {
+        level: 6,
+        description: "Create a pulsating effect on an element.",
+        solution: "animation: pulse 1s infinite alternate;",
+        styles: {
+          animation: "pulse 1s infinite alternate"
+        },
+        keyframes: `
+          @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+          }
+        `
+      },
+      {
+        level: 7,
+        description: "Make an element fade out and disappear smoothly.",
+        solution: "animation: fadeOut 1s forwards;",
+        styles: {
+          animation: "fadeOut 1s forwards"
+        },
+        keyframes: `
+          @keyframes fadeOut {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+          }
+        `
+      },
+      {
+        level: 8,
+        description: "Create a shaking effect on an element.",
+        solution: "animation: shake 0.5s infinite alternate;",
+        styles: {
+          animation: "shake 0.5s infinite alternate"
+        },
+        keyframes: `
+          @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(10px); }
+            75% { transform: translateX(-10px); }
+            100% { transform: translateX(0); }
+          }
+        `
+      },
+      {
+        level: 9,
+        description: "Animate the scaling of an element to grow and shrink continuously.",
+        solution: "animation: scale 2s infinite alternate;",
+        styles: {
+          animation: "scale 2s infinite alternate"
+        },
+        keyframes: `
+          @keyframes scale {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.5); }
+          }
+        `
+      },
+      {
+        level: 10,
+        description: "Create a rotating animation with varying easing.",
+        solution: "animation: rotateEase 2s ease-in-out infinite;",
+        styles: {
+          animation: "rotateEase 2s ease-in-out infinite"
+        },
+        keyframes: `
+          @keyframes rotateEase {
+            0% { transform: rotate(0deg); }
+            50% { transform: rotate(180deg); }
+            100% { transform: rotate(360deg); }
+          }
+        `
+      }
+    ],
+    advanceRandomChallenges: [
+      {
+        level: 1,
+        description: "Create a simple form layout using Flexbox.",
+        solution: "position: relative; ::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); }",
+        styles: {
+          ".container": {
+            "display": "flex",
+            "flexDirection": "column",
+            "gap": "10px"
+          },
+          "input[type='text'], input[type='submit']": {
+            "padding": "10px",
+            "borderRadius": "5px",
+            "border": "1px solid #ccc"
+          }
+        }
+      },
+      {
+        level: 2,
+        description: "Design a responsive grid layout with multiple columns for displaying data.",
+        solution: ".container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; } .item { background-color: #f0f0f0; padding: 10px; border-radius: 5px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); }",
+        styles: {
+          ".container": { "display": "grid", "gridTemplateColumns": "repeat(auto-fit, minmax(200px, 1fr))", "gap": "20px" },
+          ".item": { "backgroundColor": "#f0f0f0", "padding": "10px", "borderRadius": "5px", "boxShadow": "0px 0px 5px rgba(0, 0, 0, 0.1)" }
+        }
+      },
+      {
+        level: 3,
+        description: "Create a button with a shadow effect on hover.",
+        solution: "button { transition: box-shadow 0.3s ease; } button:hover { box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); }",
+        styles: {
+          "button": { "transition": "box-shadow 0.3s ease" },
+          "button:hover": { "boxShadow": "0px 0px 10px rgba(0, 0, 0, 0.3)" }
+        }
+      },
+      {
+        level: 4,
+        description: "Implement form validation styles for required input fields.",
+        solution: "input:required { border-color: red; } input:valid { border-color: green; }",
+        styles: {
+          "input:required": { "borderColor": "red" },
+          "input:valid": { "borderColor": "green" }
+        }
+      },
+      {
+        level: 5,
+        description: "Create a responsive layout with a fixed sidebar and fluid content area.",
+        solution: ".container { display: flex; } .sidebar { width: 200px; flex: 0 0 auto; } .content { flex: 1; }",
+        styles: {
+          ".container": { "display": "flex" },
+          ".sidebar": { "width": "200px", "flex": "0 0 auto" },
+          ".content": { "flex": "1" }
+        }
+      },
+      {
+        level: 6,
+        description: "Create a grid layout with multiple columns and rows.",
+        solution: ".grid-container { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, auto); gap: 20px; } .grid-item { background-color: #f0f0f0; padding: 20px; }",
+        styles: {
+          ".grid-container": { "display": "grid", "gridTemplateColumns": "repeat(3, 1fr)", "gridTemplateRows": "repeat(2, auto)", "gap": "20px" },
+          ".grid-item": { "backgroundColor": "#f0f0f0", "padding": "20px" }
+        }
+      },
+      {
+        level: 7,
+        description: "Create a button that rotates 360 degrees on hover.",
+        solution: "button { transition: transform 0.5s; } button:hover { transform: rotate(360deg); }",
+        styles: {
+          "button": { "transition": "transform 0.5s" },
+          "button:hover": { "transform": "rotate(360deg)" }
+        }
+      },
+      {
+        level: 8,
+        description: "Implement a flexbox layout with vertically centered content.",
+        solution: ".container { display: flex; align-items: center; }",
+        styles: {
+          ".container": { "display": "flex", "alignItems": "center" }
+        }
+      },      
+      {
+        level: 9,
+        description: "Create an animated effect where the shadow of an element expands and contracts.",
+        solution: ".element { transition: box-shadow 0.5s; } .element:hover { box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); }",
+        styles: {
+          ".element": { "transition": "box-shadow 0.5s" },
+          ".element:hover": { "boxShadow": "0 0 20px rgba(0, 0, 0, 0.5)" }
+        }
+      },
+      {
+        level: 10,
+        description: "Create a form with input fields and style them using transforms to scale up on focus.",
+        solution: "input { transition: transform 0.3s; } input:focus { transform: scale(1.1); }",
+        styles: {
+          "input": { "transition": "transform 0.3s" },
+          "input:focus": { "transform": "scale(1.1)" }
+        }
+      }
+    ]
   }
-
 };
 export default challenges
 
