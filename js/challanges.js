@@ -785,7 +785,283 @@ const challenges = {
       }
     ]
   },
-  intermediate : {},
+  intermediate : {
+    opacity: [
+      {
+        level: 1,
+        description: "Apply a basic opacity of 0.5 to an element.",
+        solution: "opacity: 0.5;",
+        styles: {
+          opacity: 0.5
+        }
+      },
+      {
+        level: 2,
+        description: "Add a hover effect that changes the opacity to 1 on mouseover.",
+        solution: "opacity: 1;",
+        styles: {
+          ":hover": {
+            opacity: 1
+          }
+        }
+      },
+      {
+        level: 3,
+        description: "Apply opacity to an image to create a semi-transparent effect.",
+        solution: "opacity: 0.7;",
+        styles: {
+          opacity: 0.7
+        }
+      },
+      {
+        level: 4,
+        description: "Use RGBA color to set an element's background color with opacity.",
+        solution: "background-color: rgba(255, 0, 0, 0.5);",
+        styles: {
+          backgroundColor: "rgba(255, 0, 0, 0.5)"
+        }
+      },
+      {
+        level: 5,
+        description: "Apply opacity to text to create a semi-transparent text effect.",
+        solution: "color: rgba(0, 0, 255, 0.7);",
+        styles: {
+          color: "rgba(0, 0, 255, 0.7)"
+        }
+      },
+      {
+        level: 6,
+        description: "Use opacity to fade out an element over time using CSS transitions.",
+        solution: "transition: opacity 0.5s ease-in-out; opacity: 0;",
+        styles: {
+          transition: "opacity 0.5s ease-in-out",
+          opacity: 0
+        }
+      },
+      {
+        level: 7,
+        description: "Create a smooth hover effect that fades in and out with opacity.",
+        solution: "transition: opacity 0.5s ease-in-out; &:hover { opacity: 0.7; }",
+        styles: {
+          transition: "opacity 0.5s ease-in-out",
+          ":hover": {
+            opacity: 0.7
+          }
+        }
+      },
+      {
+        level: 8,
+        description: "Use opacity to create a frosted glass effect on a background image.",
+        solution: "background-color: rgba(255, 255, 255, 0.5);",
+        styles: {
+          backgroundColor: "rgba(255, 255, 255, 0.5)"
+        }
+      },
+      {
+        level: 9,
+        description: "Apply opacity to a pseudo-element to overlay a semi-transparent layer.",
+        solution: "&::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); }",
+        styles: {
+          "&::after": {
+            content: "''",
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.5)"
+          }
+        }
+      },
+      {
+        level: 10,
+        description: "Create a fading slideshow by changing the opacity of multiple images.",
+        solution: "transition: opacity 0.5s ease-in-out; &:hover { opacity: 0.5; }",
+        styles: {
+          transition: "opacity 0.5s ease-in-out",
+          ":hover": {
+            opacity: 0.5
+          }
+        }
+      }
+    ], 
+    lists: [
+      {
+        level: 1,
+        description: "Change the list item markers to squares.",
+        solution: "list-style-type: square;",
+        styles: {
+          listStyleType: "square"
+        }
+      },
+      {
+        level: 2,
+        description: "Position the list item markers to the outside of the list items.",
+        solution: "list-style-position: outside;",
+        styles: {
+          listStylePosition: "outside"
+        }
+      },
+      {
+        level: 3,
+        description: "Remove default settings for list styling.",
+        solution: "list-style: none;",
+        styles: {
+          listStyle: "none"
+        }
+      },
+      {
+        level: 4,
+        description: "Use the list shorthand property to set list style to none, position to inside, and image to 'url('image.png')'.",
+        solution: "list-style: none inside url('image.png');",
+        styles: {
+          listStyle: "none inside url('image.png')"
+        }
+      },
+      {
+        level: 5,
+        description: "Style the list items with different background colors.",
+        solution: "background-color: #f0f0f0;",
+        styles: {
+          backgroundColor: "#f0f0f0"
+        }
+      },
+      {
+        level: 6,
+        description: "Change the list item markers to circles and position them inside the list items.",
+        solution: "list-style-type: circle; list-style-position: inside;",
+        styles: {
+          listStyleType: "circle",
+          listStylePosition: "inside"
+        }
+      },
+      {
+        level: 7,
+        description: "Set a custom image as the list item marker.",
+        solution: "list-style-image: url('custom-marker.png');",
+        styles: {
+          listStyleImage: "url('custom-marker.png')"
+        }
+      },
+      {
+        level: 8,
+        description: "Apply alternating background colors to list items using nth-child selector.",
+        solution: "background-color: #f0f0f0; &:nth-child(even) { background-color: #e0e0e0; }",
+        styles: {
+          backgroundColor: "#f0f0f0",
+          "&:nth-child(even)": {
+            backgroundColor: "#e0e0e0"
+          }
+        }
+      },
+      {
+        level: 9,
+        description: "Add padding and margin to list items for spacing.",
+        solution: "padding: 10px; margin-bottom: 5px;",
+        styles: {
+          padding: "10px",
+          marginBottom: "5px"
+        }
+      },
+      {
+        level: 10,
+        description: "Style the list with a border and box shadow.",
+        solution: "border: 1px solid #ccc; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);",
+        styles: {
+          border: "1px solid #ccc",
+          boxShadow: "2px 2px 5px rgba(0, 0, 0, 0.1)"
+        }
+      }
+    ],
+    tables: [
+      {
+        level: 1,
+        description: "Add borders to all table cells.",
+        solution: "border: 1px solid black;",
+        styles: {
+          border: "1px solid black"
+        }
+      },
+      {
+        level: 2,
+        description: "Create a full-width table that spans the entire width of its container.",
+        solution: "width: 100%;",
+        styles: {
+          width: "100%"
+        }
+      },
+      {
+        level: 3,
+        description: "Collapse table borders to avoid doubled lines.",
+        solution: "border-collapse: collapse;",
+        styles: {
+          borderCollapse: "collapse"
+        }
+      },
+      {
+        level: 4,
+        description: "Set the table width to 500 pixels and height to 300 pixels.",
+        solution: "width: 500px; height: 300px;",
+        styles: {
+          width: "500px",
+          height: "300px"
+        }
+      },
+      {
+        level: 5,
+        description: "Align table content horizontally to the center.",
+        solution: "text-align: center;",
+        styles: {
+          textAlign: "center"
+        }
+      },
+      {
+        level: 6,
+        description: "Align table content vertically to the middle.",
+        solution: "vertical-align: middle;",
+        styles: {
+          verticalAlign: "middle"
+        }
+      },
+      {
+        level: 7,
+        description: "Add padding to table cells for spacing.",
+        solution: "padding: 10px;",
+        styles: {
+          padding: "10px"
+        }
+      },
+      {
+        level: 8,
+        description: "Create horizontal dividers between table rows.",
+        solution: "border-bottom: 1px solid black;",
+        styles: {
+          borderBottom: "1px solid black"
+        }
+      },
+      {
+        level: 9,
+        description: "Make the table rows change color on hover.",
+        solution: "transition: background-color 0.3s ease; &:hover { background-color: #f0f0f0; }",
+        styles: {
+          transition: "background-color 0.3s ease",
+          "&:hover": {
+            backgroundColor: "#f0f0f0"
+          }
+        }
+      },
+      {
+        level: 10,
+        description: "Create striped rows alternating colors.",
+        solution: "&:nth-child(even) { background-color: #f0f0f0; }",
+        styles: {
+          "&:nth-child(even)": {
+            backgroundColor: "#f0f0f0"
+          }
+        }
+      }
+    ],
+  },
   advanced : {}
 
 };
