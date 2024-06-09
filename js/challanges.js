@@ -332,6 +332,89 @@ const challenges = {
         }
       }
     ],
+    padding: [
+      {
+        level: 1,
+        description: "Set the padding of the box to 10 pixels on all sides.",
+        solution: "padding: 10px;",
+        styles: {
+          padding: "10px"
+        }
+      },
+      {
+        level: 2,
+        description: "Use the shorthand property to set the padding of the box to 20 pixels on all sides.",
+        solution: "padding: 20px;",
+        styles: {
+          padding: "20px"
+        }
+      },
+      {
+        level: 3,
+        description: "Set the padding of the box to 5 pixels on the top side, 10 pixels on the right side, 15 pixels on the bottom side, and 20 pixels on the left side.",
+        solution: "padding: 5px 10px 15px 20px;",
+        styles: {
+          padding: "5px 10px 15px 20px"
+        }
+      },
+      {
+        level: 4,
+        description: "Set the padding of the box to 30 pixels on all sides using the shorthand property.",
+        solution: "padding: 30px;",
+        styles: {
+          padding: "30px"
+        }
+      },
+      {
+        level: 5,
+        description: "Set the padding of the box using the shorthand property to 10 pixels on all sides, except for the left padding, which should be 0 pixels.",
+        solution: "padding: 10px 10px 10px 0;",
+        styles: {
+          padding: "10px 10px 10px 0"
+        }
+      },
+      {
+        level: 6,
+        description: "Set the top padding of the box to 30 pixels and the bottom padding to 40 pixels.",
+        solution: "padding-top: 30px; padding-bottom: 40px;",
+        styles: {
+          paddingTop: "30px",
+          paddingBottom: "40px"
+        }
+      },
+      {
+        level: 7,
+        description: "Set the padding of the box using the shorthand property to 20 pixels on all sides, with the exception of the top padding, which should be 0 pixels.",
+        solution: "padding: 0 20px 20px 20px;",
+        styles: {
+          padding: "0 20px 20px 20px"
+        }
+      },
+      {
+        level: 8,
+        description: "Set the right padding of the box to inherit.",
+        solution: "padding-right: inherit;",
+        styles: {
+          paddingRight: "inherit"
+        }
+      },
+      {
+        level: 9,
+        description: "Set the left padding of the box to auto.",
+        solution: "padding-left: auto;",
+        styles: {
+          paddingLeft: "auto"
+        }
+      },
+      {
+        level: 10,
+        description: "Set the padding of the box to 15 pixels on all sides, with the auto value applied to the left and right paddings.",
+        solution: "padding: 15px auto;",
+        styles: {
+          padding: "15px auto"
+        }
+      }
+    ],
   },
   intermediate : {},
   advanced : {}
