@@ -249,6 +249,89 @@ const challenges = {
         }
       }
     ],
+    margins: [
+      {
+        level: 1,
+        description: "Set the margin of the box to 10 pixels on all sides.",
+        solution: "margin: 10px;",
+        styles: {
+          margin: "10px"
+        }
+      },
+      {
+        level: 2,
+        description: "Use the shorthand property to set the margin of the box to 20 pixels on all sides.",
+        solution: "margin: 20px;",
+        styles: {
+          margin: "20px"
+        }
+      },
+      {
+        level: 3,
+        description: "Set the margin of the box using the shorthand property to 10 pixels on all sides, except for the left margin, which should be 0 pixels.",
+        solution: "margin: 10px 0 10px 10px;",
+        styles: {
+          margin: "10px 0 10px 10px"
+        }
+      },
+      {
+        level: 4,
+        description: "Set the margin of the box using the shorthand property to 15 pixels on all sides, with the auto value applied to the left and right margins.",
+        solution: "margin: 15px auto;",
+        styles: {
+          margin: "15px auto"
+        }
+      },
+      {
+        level: 5,
+        description: "Set the margin of the box to 5 pixels on the top side, 10 pixels on the right side, 15 pixels on the bottom side, and 20 pixels on the left side.",
+        solution: "margin: 5px 10px 15px 20px;",
+        styles: {
+          margin: "5px 10px 15px 20px"
+        }
+      },
+      {
+        level: 6,
+        description: "Set the top margin of the box to 30 pixels and the bottom margin to 40 pixels. Make use of margin collapse.",
+        solution: "margin-top: 30px; margin-bottom: 40px;",
+        styles: {
+          marginTop: "30px",
+          marginBottom: "40px"
+        }
+      },
+      {
+        level: 7,
+        description: "Set the margin of the box to 30 pixels on all sides using the shorthand property. Ensure that margin collapse does not occur.",
+        solution: "margin: 30px;",
+        styles: {
+          margin: "30px"
+        }
+      },
+      {
+        level: 8,
+        description: "Set the right margin of the box to inherit.",
+        solution: "margin-right: inherit;",
+        styles: {
+          marginRight: "inherit"
+        }
+      },
+      {
+        level: 9,
+        description: "Set the margin of the box using the shorthand property to 20 pixels on all sides, with the exception of the top margin, which should be 0 pixels.",
+        solution: "margin: 0 20px 20px 20px;",
+        styles: {
+          margin: "0 20px 20px 20px"
+        }
+      },
+      {
+        level: 10,
+        description: "Set the left margin of the box to auto.",
+        solution: "margin-left: auto;",
+        styles: {
+          marginLeft: "auto"
+        }
+      }
+    ],
   },
   intermediate : {},
   advanced : {}
