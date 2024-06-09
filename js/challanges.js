@@ -2161,7 +2161,8 @@ const challenges = {
           textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)"
         }
       }
-    ], flexBox: [
+    ], 
+    flexBox: [
       {
         level: 1,
         description: "Center a box using Flexbox.",
