@@ -1663,7 +1663,334 @@ const challenges = {
       }
     ]
   },
-  advanced : {}
+  advanced : {
+    multipleColumns: [
+      {
+        level: 1,
+        description: "Create a basic two-column layout with equal width.",
+        solution: "column-count: 2;",
+        styles: {
+          columnCount: 2
+        }
+      },
+      {
+        level: 2,
+        description: "Set the gap between columns to 20 pixels.",
+        solution: "column-gap: 20px;",
+        styles: {
+          columnGap: "20px"
+        }
+      },
+      {
+        level: 3,
+        description: "Apply a rule to balance the height of columns.",
+        solution: "column-fill: balance;",
+        styles: {
+          columnFill: "balance"
+        }
+      },
+      {
+        level: 4,
+        description: "Create a three-column layout with equal width and increased gap.",
+        solution: "column-count: 3; column-gap: 30px;",
+        styles: {
+          columnCount: 3,
+          columnGap: "30px"
+        }
+      },
+      {
+        level: 5,
+        description: "Set the column width to 200 pixels for a fixed layout.",
+        solution: "column-width: 200px;",
+        styles: {
+          columnWidth: "200px"
+        }
+      },
+      {
+        level: 6,
+        description: "Create a magazine-style layout with varied column widths.",
+        solution: "column-count: auto; column-width: 200px;",
+        styles: {
+          columnCount: "auto",
+          columnWidth: "200px"
+        }
+      },
+      {
+        level: 7,
+        description: "Set the column rule to provide visual separation between columns.",
+        solution: "column-rule: 2px solid #ccc;",
+        styles: {
+          columnRule: "2px solid #ccc"
+        }
+      },
+      {
+        level: 8,
+        description: "Apply a rule to break column layout only at specified breakpoints.",
+        solution: "@media (min-width: 800px) { .container { column-count: 2; } }",
+        styles: {
+          "@media (min-width: 800px)": {
+            ".container": {
+              columnCount: 2
+            }
+          }
+        }
+      },
+      {
+        level: 9,
+        description: "Create a complex layout with multiple column spans and widths.",
+        solution: ".column1 { width: 30%; } .column2 { width: 70%; }",
+        styles: {
+          ".column1": {
+            width: "30%"
+          },
+          ".column2": {
+            width: "70%"
+          }
+        }
+      },
+      {
+        level: 10,
+        description: "Implement a responsive column layout that adjusts based on screen size.",
+        solution: "@media (min-width: 600px) { .container { column-count: 2; } }",
+        styles: {
+          "@media (min-width: 600px)": {
+            ".container": {
+              columnCount: 2
+            }
+          }
+        }
+      }
+    ],
+    forms: [
+      {
+        level: 1,
+        description: "Style the text input fields with a border, padding, and background color.",
+        solution: "input[type='text'] { border: 1px solid #ccc; padding: 5px; background-color: #f9f9f9; }",
+        styles: {
+          "input[type='text']": {
+            border: "1px solid #ccc",
+            padding: "5px",
+            backgroundColor: "#f9f9f9"
+          }
+        }
+      },
+      {
+        level: 2,
+        description: "Add a box shadow effect to the text input fields.",
+        solution: "input[type='text'] { box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); }",
+        styles: {
+          "input[type='text']": {
+            boxShadow: "2px 2px 5px rgba(0, 0, 0, 0.1)"
+          }
+        }
+      },
+      {
+        level: 3,
+        description: "Style the submit button with a background color, padding, and border radius.",
+        solution: "input[type='submit'] { background-color: #4CAF50; padding: 10px 20px; border: none; border-radius: 5px; color: white; }",
+        styles: {
+          "input[type='submit']": {
+            backgroundColor: "#4CAF50",
+            padding: "10px 20px",
+            border: "none",
+            borderRadius: "5px",
+            color: "white"
+          }
+        }
+      },
+      {
+        level: 4,
+        description: "Create a custom checkbox style using pseudo-elements.",
+        solution: "input[type='checkbox'] { position: relative; } input[type='checkbox']::before { content: ''; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 20px; height: 20px; background-color: #ccc; border-radius: 3px; } input[type='checkbox']:checked::before { background-color: #4CAF50; }",
+        styles: {
+          "input[type='checkbox']": {
+            position: "relative"
+          },
+          "input[type='checkbox']::before": {
+            content: "''",
+            display: "block",
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: "20px",
+            height: "20px",
+            backgroundColor: "#ccc",
+            borderRadius: "3px"
+          },
+          "input[type='checkbox']:checked::before": {
+            backgroundColor: "#4CAF50"
+          }
+        }
+      },
+      {
+        level: 5,
+        description: "Style the select dropdown with custom arrow icons.",
+        solution: "select { appearance: none; background: url('arrow.svg') no-repeat right; padding-right: 20px; }",
+        styles: {
+          select: {
+            appearance: "none",
+            background: "url('arrow.svg') no-repeat right",
+            paddingRight: "20px"
+          }
+        }
+      },
+      {
+        level: 6,
+        description: "Create a custom radio button style using pseudo-elements.",
+        solution: "input[type='radio'] { position: relative; } input[type='radio']::before { content: ''; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 20px; height: 20px; border-radius: 50%; border: 1px solid #ccc; } input[type='radio']:checked::before { background-color: #4CAF50; }",
+        styles: {
+          "input[type='radio']": {
+            position: "relative"
+          },
+          "input[type='radio']::before": {
+            content: "''",
+            display: "block",
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: "20px",
+            height: "20px",
+            borderRadius: "50%",
+            border: "1px solid #ccc"
+          },
+          "input[type='radio']:checked::before": {
+            backgroundColor: "#4CAF50"
+          }
+        }
+      },
+      {
+        level: 7,
+        description: "Style the textarea with a border, padding, and background color.",
+        solution: "textarea { border: 1px solid #ccc; padding: 5px; background-color: #f9f9f9; }",
+        styles: {
+          textarea: {
+            border: "1px solid #ccc",
+            padding: "5px",
+            backgroundColor: "#f9f9f9"
+          }
+        }
+      },
+      {
+        level: 8,
+        description: "Apply a hover effect to form elements.",
+        solution: "input:hover, textarea:hover, select:hover { box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); }",
+        styles: {
+          "input:hover, textarea:hover, select:hover": {
+            boxShadow: "0 0 5px rgba(0, 0, 0, 0.1)"
+          }
+        }
+      },
+      {
+        level: 9,
+        description: "Style the form elements to have rounded corners.",
+        solution: "input, textarea, select { border-radius: 5px; }",
+        styles: {
+          "input, textarea, select": {
+            borderRadius: "5px"
+          }
+        }
+      },
+      {
+        level: 10,
+        description: "Add a transition effect to form elements.",
+        solution: "input, textarea, select { transition: all 0.3s ease; }",
+        styles: {
+          "input, textarea, select": {
+            transition: "all 0.3s ease"
+          }
+        }
+      }
+    ],
+    grid: [
+      {
+        level: 1,
+        description: "Create a simple grid layout.",
+        solution: 'display: grid; grid-template-columns: repeat(3, 1fr);',
+        styles: {
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, 1fr)'
+        }
+      },
+      {
+        level: 2,
+        description: "Create a grid with different column spans.",
+        solution: 'grid-column: span 2;',
+        styles: {
+          gridColumn: 'span 2'
+        }
+      },
+      {
+        level: 3,
+        description: "Place an item in the second column and second row.",
+        solution: "grid-column: 2; grid-row: 2;",
+        styles: {
+          gridColumn: "2",
+          gridRow: "2"
+        }
+      },
+      {
+        level: 4,
+        description: "Create a grid with 2 columns where the first column takes up twice the space of the second.",
+        solution: "grid-template-columns: 2fr 1fr;",
+        styles: {
+          gridTemplateColumns: "2fr 1fr"
+        }
+      },
+      {
+        level: 5,
+        description: "Align items in the grid to the center both horizontally and vertically.",
+        solution: "justify-items: center; align-items: center;",
+        styles: {
+          justifyItems: "center",
+          alignItems: "center"
+        }
+      },
+      {
+        level: 6,
+        description: "Make the first column of the grid auto-sized.",
+        solution: "grid-template-columns: auto 1fr 1fr;",
+        styles: {
+          gridTemplateColumns: "auto 1fr 1fr"
+        }
+      },
+      {
+        level: 7,
+        description: "Create a grid where items automatically span across multiple columns.",
+        solution: "grid-template-columns: repeat(3, 1fr);",
+        styles: {
+          gridTemplateColumns: "repeat(3, 1fr)"
+        }
+      },
+      {
+        level: 8,
+        description: "Place an item in the last row and last column.",
+        solution: "grid-column: 3; grid-row: 3;",
+        styles: {
+          gridColumn: "3",
+          gridRow: "3"
+        }
+      },
+      {
+        level: 9,
+        description: "Overlap two grid items within the same cell.",
+        solution: "grid-column: span 2; grid-row: span 2;",
+        styles: {
+          gridColumn: "span 2",
+          gridRow: "span 2"
+        }
+      },
+      {
+        level: 10,
+        description: "Create a responsive grid with auto-sized columns that adapt to the available space.",
+        solution: "grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));",
+        styles: {
+          gridTemplateColumns: "repeat(auto-fit, minmax(100px, 1fr))"
+        }
+      }
+    ],
+  }
 
 };
 export default challenges
