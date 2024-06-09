@@ -683,6 +683,107 @@ const challenges = {
         }
       }
     ],
+    beginnerRandomChallenges: [
+      {
+        level: 1,
+        description: "Create a box with a red background, white text, and a solid black border.",
+        solution: "background-color: red; color: white; border: 2px solid black;",
+        styles: {
+          backgroundColor: "red",
+          color: "white",
+          border: "2px solid black"
+        }
+      },
+      {
+        level: 2,
+        description: "Design a button with a blue background, white text, and 10 pixels of padding.",
+        solution: "background-color: blue; color: white; padding: 10px;",
+        styles: {
+          backgroundColor: "blue",
+          color: "white",
+          padding: "10px"
+        }
+      },
+      {
+        level: 3,
+        description: "Create a card-like element with a light gray background, a solid border, and 20 pixels of padding.",
+        solution: "background-color: lightgray; border: 1px solid black; padding: 20px;",
+        styles: {
+          backgroundColor: "lightgray",
+          border: "1px solid black",
+          padding: "20px"
+        }
+      },
+      {
+        level: 4,
+        description: "Create a sidebar with a fixed width of 200 pixels, a gray background, and 15 pixels of margin.",
+        solution: "width: 200px; background-color: gray; margin: 15px;",
+        styles: {
+          width: "200px",
+          backgroundColor: "gray",
+          margin: "15px"
+        }
+      },
+      {
+        level: 5,
+        description: "Design a footer with a dark background color, centered text, and 20 pixels of padding.",
+        solution: "background-color: darkgray; text-align: center; padding: 20px;",
+        styles: {
+          backgroundColor: "darkgray",
+          textAlign: "center",
+          padding: "20px"
+        }
+      },
+      {
+        level: 6,
+        description: "Create a form with input fields, labels, and a submit button, all vertically aligned.",
+        solution: "position: relative; display: block;",
+        styles: {
+          position: "relative",
+          display: "block"
+        }
+      },
+      {
+        level: 7,
+        description: "Set up a navigation menu with horizontal links evenly spaced and 10 pixels of padding.",
+        solution: "display: inline-block; padding: 10px;",
+        styles: {
+          display: "inline-block",
+          padding: "10px"
+        }
+      },
+      {
+        level: 8,
+        description: "Design a banner with a background image, centered text, and 10 pixels of padding.",
+        solution: "background-image: url('banner.jpg'); background-size: cover; text-align: center; padding: 10px;",
+        styles: {
+          backgroundImage: "url('banner.jpg')",
+          backgroundSize: "cover",
+          textAlign: "center",
+          padding: "10px"
+        }
+      },
+      {
+        level: 9,
+        description: "Create a layout with three equally spaced columns and 15 pixels of padding between them.",
+        solution: "display: inline-block; width: calc(33.33% - 5px); margin-right: 15px;",
+        styles: {
+          display: "inline-block",
+          width: "calc(33.33% - 5px)",
+          marginRight: "15px"
+        }
+      },
+      {
+        level: 10,
+        description: "Create a bordered box with a dashed border, a width of 3px, and a color of green, and centered text with 15 pixels of padding.",
+        solution: "border: 3px dashed green; text-align: center; padding: 15px;",
+        styles: {
+          border: "3px dashed green",
+          textAlign: "center",
+          padding: "15px"
+        }
+      }
+    ]
   },
   intermediate : {},
   advanced : {}
