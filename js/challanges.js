@@ -1990,6 +1990,260 @@ const challenges = {
         }
       }
     ],
+    shadows: [
+      {
+        "level": 1,
+        "description": "Add a simple shadow to the box with a horizontal offset of 2px, vertical offset of 2px, and blur radius of 5px.",
+        "solution": "box-shadow: 2px 2px 5px;",
+        "styles": {
+          "boxShadow": "2px 2px 5px"
+        }
+      },
+      {
+        "level": 2,
+        "description": "Create a shadow with a horizontal offset of 4px, vertical offset of 4px, blur radius of 10px, and a shadow color of rgba(0, 0, 0, 0.5).",
+        "solution": "box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);",
+        "styles": {
+          "boxShadow": "4px 4px 10px rgba(0, 0, 0, 0.5)"
+        }
+      },
+      {
+        "level": 3,
+        "description": "Create an inset shadow with a horizontal offset of 0, vertical offset of 0, blur radius of 5px, and shadow color of rgba(0, 0, 0, 0.3).",
+        "solution": "box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);",
+        "styles": {
+          "boxShadow": "inset 0 0 5px rgba(0, 0, 0, 0.3)"
+        }
+      },
+      {
+        "level": 4,
+        "description": "Add a shadow to the text with a horizontal offset of 2px, vertical offset of 2px, and blur radius of 3px.",
+        "solution": "text-shadow: 2px 2px 3px;",
+        "styles": {
+          "textShadow": "2px 2px 3px"
+        }
+      },
+      {
+        "level": 5,
+        "description": "Create a multi-shadow effect on the box with the following shadows: (1px 1px 2px rgba(0, 0, 0, 0.2)), (2px 2px 4px rgba(0, 0, 0, 0.2)), (3px 3px 6px rgba(0, 0, 0, 0.2)).",
+        "solution": "box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2), 2px 2px 4px rgba(0, 0, 0, 0.2), 3px 3px 6px rgba(0, 0, 0, 0.2);",
+        "styles": {
+          "boxShadow": "1px 1px 2px rgba(0, 0, 0, 0.2), 2px 2px 4px rgba(0, 0, 0, 0.2), 3px 3px 6px rgba(0, 0, 0, 0.2)"
+        }
+      },
+      {
+        "level": 6,
+        "description": "Create a shadow that mimics the appearance of a lifted card with the following properties: horizontal offset of 0px, vertical offset of 10px, blur radius of 15px, and shadow color of rgba(0, 0, 0, 0.2).",
+        "solution": "box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);",
+        "styles": {
+          "boxShadow": "0px 10px 15px rgba(0, 0, 0, 0.2)"
+        }
+      },
+      {
+        "level": 7,
+        "description": "Apply a shadow to an element that makes it look like it is floating. Use a horizontal offset of 0px, vertical offset of 5px, blur radius of 10px, spread radius of 2px, and shadow color rgba(0, 0, 0, 0.3).",
+        "solution": "box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.3);",
+        "styles": {
+          "boxShadow": "0px 5px 10px 2px rgba(0, 0, 0, 0.3)"
+        }
+      },
+      {
+        "level": 8,
+        "description": "Create a neon text shadow effect with the following properties: horizontal offset of 0px, vertical offset of 0px, blur radius of 10px, and shadow color of #0ff.",
+        "solution": "text-shadow: 0px 0px 10px #0ff;",
+        "styles": {
+          "textShadow": "0px 0px 10px #0ff"
+        }
+      },
+      {
+        "level": 9,
+        "description": "Create a deep shadow effect on the box with the following properties: horizontal offset of 0px, vertical offset of 20px, blur radius of 30px, and shadow color rgba(0, 0, 0, 0.4).",
+        "solution": "box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.4);",
+        "styles": {
+          "boxShadow": "0px 20px 30px rgba(0, 0, 0, 0.4)"
+        }
+      },
+      {
+        "level": 10,
+        "description": "Create a shadow that makes an element appear inset with the following properties: horizontal offset of -5px, vertical offset of -5px, blur radius of 15px, spread radius of 10px, and shadow color rgba(0, 0, 0, 0.3).",
+        "solution": "box-shadow: inset -5px -5px 15px 10px rgba(0, 0, 0, 0.3);",
+        "styles": {
+          "boxShadow": "inset -5px -5px 15px 10px rgba(0, 0, 0, 0.3)"
+        }
+      }
+    ],
+    transforms: [
+      {
+        level: 1,
+        description: "Rotate a box by 45 degrees.",
+        solution: 'transform: rotate(45deg);',
+        styles: {
+          transform: 'rotate(45deg)'
+        }
+      },
+      {
+        level: 2,
+        description: "Scale a box to 1.5 times its size.",
+        solution: 'transform: scale(1.5);',
+        styles: {
+          transform: 'scale(1.5)'
+        }
+      },
+      {
+        level: 3,
+        description: "Translate an element 20 pixels to the right.",
+        solution: "transform: translateX(20px);",
+        styles: {
+          transform: "translateX(20px)"
+        }
+      },
+      {
+        level: 4,
+        description: "Skew an element along the X-axis by 30 degrees.",
+        solution: "transform: skewX(30deg);",
+        styles: {
+          transform: "skewX(30deg)"
+        }
+      },
+      {
+        level: 5,
+        description: "Skew an element along the Y-axis by -20 degrees.",
+        solution: "transform: skewY(-20deg);",
+        styles: {
+          transform: "skewY(-20deg)"
+        }
+      },
+      {
+        level: 6,
+        description: "Combine scaling and rotation to create a diagonal stretch effect.",
+        solution: "transform: scale(1.5) rotate(45deg);",
+        styles: {
+          transform: "scale(1.5) rotate(45deg)"
+        }
+      },
+      {
+        level: 7,
+        description: "Translate an element 50 pixels down and 30 pixels to the right.",
+        solution: "transform: translate(30px, 50px);",
+        styles: {
+          transform: "translate(30px, 50px)"
+        }
+      },
+      {
+        level: 8,
+        description: "Rotate an element 180 degrees while scaling it to 0.5 times its original size.",
+        solution: "transform: rotate(180deg) scale(0.5);",
+        styles: {
+          transform: "rotate(180deg) scale(0.5)"
+        }
+      },
+      {
+        level: 9,
+        description: "Combine rotation and skew to create a twisted effect.",
+        solution: "transform: rotate(45deg) skewX(30deg);",
+        styles: {
+          transform: "rotate(45deg) skewX(30deg)"
+        }
+      },
+      {
+        level: 10,
+        description: "Create a perspective effect by applying a 3D transformation.",
+        solution: "transform: perspective(500px) rotateY(45deg);",
+        styles: {
+          transform: "perspective(500px) rotateY(45deg)"
+        }
+      }
+    ],
+    buttons: [
+      {
+        level: 1,
+        description: "Style the button with a background color of blue and white text color.",
+        solution: "background-color: blue; color: white;",
+        styles: {
+          backgroundColor: "blue",
+          color: "white"
+        }
+      },
+      {
+        level: 2,
+        description: "Add a border to the button with a solid style, 2px width, and black color.",
+        solution: "border: 2px solid black;",
+        styles: {
+          border: "2px solid black"
+        }
+      },
+      {
+        level: 3,
+        description: "Apply padding to the button to increase spacing between text and border.",
+        solution: "padding: 10px 20px;",
+        styles: {
+          padding: "10px 20px"
+        }
+      },
+      {
+        level: 4,
+        description: "Add a hover effect that changes the background color to red and text color to white.",
+        solution: "background-color: red; color: white;",
+        styles: {
+          ":hover": {
+            backgroundColor: "red",
+            color: "white"
+          }
+        }
+      },
+      {
+        level: 5,
+        description: "Apply a transition effect to smoothly animate color changes over 0.3 seconds.",
+        solution: "transition: color 0.3s, background-color 0.3s;",
+        styles: {
+          transition: "color 0.3s, background-color 0.3s"
+        }
+      },
+      {
+        level: 6,
+        description: "Add rounded corners to the button with a border-radius of 5px.",
+        solution: "border-radius: 5px;",
+        styles: {
+          borderRadius: "5px"
+        }
+      },
+      {
+        level: 7,
+        description: "Create a button with a gradient background.",
+        solution: "background-image: linear-gradient(to right, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);",
+        styles: {
+          backgroundImage: "linear-gradient(to right, #ff9a9e 0%, #fecfef 99%, #fecfef 100%)"
+        }
+      },
+      {
+        level: 8,
+        description: "Add a box shadow to the button for a raised effect.",
+        solution: "box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);",
+        styles: {
+          boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"
+        }
+      },
+      {
+        level: 9,
+        description: "Create a button with a 3D effect using perspective and transform properties.",
+        solution: "transform-style: preserve-3d; perspective: 1000px; transform: rotateY(45deg);",
+        styles: {
+          transformStyle: "preserve-3d",
+          perspective: "1000px",
+          transform: "rotateY(45deg)"
+        }
+      },
+      {
+        level: 10,
+        description: "Customize the button style with additional properties such as font size, font weight, and text shadow.",
+        solution: "font-size: 18px; font-weight: bold; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);",
+        styles: {
+          fontSize: "18px",
+          fontWeight: "bold",
+          textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)"
+        }
+      }
+    ],
   }
 
 };
