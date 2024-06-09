@@ -517,6 +517,88 @@ const challenges = {
         }
       }
     ],
+    outline: [
+      {
+        level: 1,
+        description: "Set the outline style of the box to solid.",
+        solution: "outline-style: solid;",
+        styles: {
+          outlineStyle: "solid"
+        }
+      },
+      {
+        level: 2,
+        description: "Set the outline width of the box to 2 pixels.",
+        solution: "outline-width: 2px;",
+        styles: {
+          outlineWidth: "2px"
+        }
+      },
+      {
+        level: 3,
+        description: "Set the outline color of the box to red using HEX value.",
+        solution: "outline-color: #ff0000;",
+        styles: {
+          outlineColor: "#ff0000"
+        }
+      },
+      {
+        level: 4,
+        description: "Set the outline color of the box to green using RGB value.",
+        solution: "outline-color: rgb(0, 255, 0);",
+        styles: {
+          outlineColor: "rgb(0, 255, 0)"
+        }
+      },
+      {
+        level: 5,
+        description: "Set the outline color of the box to blue using HSL value.",
+        solution: "outline-color: hsl(240, 100%, 50%);",
+        styles: {
+          outlineColor: "hsl(240, 100%, 50%)"
+        }
+      },
+      {
+        level: 6,
+        description: "Set the outline to dashed with a width of 3 pixels.",
+        solution: "outline: 3px dashed;",
+        styles: {
+          outline: "3px dashed"
+        }
+      },
+      {
+        level: 7,
+        description: "Set the outline to double with a width of 4 pixels.",
+        solution: "outline: 4px double;",
+        styles: {
+          outline: "4px double"
+        }
+      },
+      {
+        level: 8,
+        description: "Set the outline to groove with a width of 5 pixels.",
+        solution: "outline: 5px groove;",
+        styles: {
+          outline: "5px groove"
+        }
+      },
+      {
+        level: 9,
+        description: "Set the outline to inset with a width of 6 pixels.",
+        solution: "outline: 6px inset;",
+        styles: {
+          outline: "6px inset"
+        }
+      },
+      {
+        level: 10,
+        description: "Set the outline to outset with a width of 7 pixels.",
+        solution: "outline: 7px outset;",
+        styles: {
+          outline: "7px outset"
+        }
+      }
+    ],
   },
   intermediate : {},
   advanced : {}
