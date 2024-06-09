@@ -1061,6 +1061,262 @@ const challenges = {
         }
       }
     ],
+    counters: [
+      {
+        level: 1,
+        description: "Use a counter to number the list items in an ordered list.",
+        solution: "counter-reset: item;",
+        styles: {
+          counterReset: "item"
+        }
+      },
+      {
+        level: 2,
+        description: "Increment the counter for each list item.",
+        solution: "counter-increment: item;",
+        styles: {
+          counterIncrement: "item"
+        }
+      },
+      {
+        level: 3,
+        description: "Display the counter value before each list item.",
+        solution: "content: counter(item) '. ';",
+        styles: {
+          content: "counter(item) '. '"
+        }
+      },
+      {
+        level: 4,
+        description: "Style the counter value with a different color.",
+        solution: "color: blue;",
+        styles: {
+          color: "blue"
+        }
+      },
+      {
+        level: 5,
+        description: "Change the counter style to uppercase letters.",
+        solution: "list-style-type: upper-alpha;",
+        styles: {
+          listStyleType: "upper-alpha"
+        }
+      },
+      {
+        level: 6,
+        description: "Reset the counter for nested list items.",
+        solution: "counter-reset: subitem;",
+        styles: {
+          counterReset: "subitem"
+        }
+      },
+      {
+        level: 7,
+        description: "Increment the counter for nested list items.",
+        solution: "counter-increment: subitem;",
+        styles: {
+          counterIncrement: "subitem"
+        }
+      },
+      {
+        level: 8,
+        description: "Display the nested counter value before each list item.",
+        solution: "content: counter(item) '.' counter(subitem) '. ';",
+        styles: {
+          content: "counter(item) '.' counter(subitem) '. '"
+        }
+      },
+      {
+        level: 9,
+        description: "Style the nested counter value with a different color.",
+        solution: "color: red;",
+        styles: {
+          color: "red"
+        }
+      },
+      {
+        level: 10,
+        description: "Change the nested counter style to lowercase Roman numerals.",
+        solution: "list-style-type: lower-roman;",
+        styles: {
+          listStyleType: "lower-roman"
+        }
+      }
+    ],
+    pagination: [
+      {
+        level: 1,
+        description: "Style the pagination links with a background color of white and black text color.",
+        solution: "background-color: white; color: black;",
+        styles: {
+          backgroundColor: "white",
+          color: "black"
+        }
+      },
+      {
+        level: 2,
+        description: "Add padding to the pagination links to increase spacing between text and border.",
+        solution: "padding: 8px 12px;",
+        styles: {
+          padding: "8px 12px"
+        }
+      },
+      {
+        level: 3,
+        description: "Apply a border to the pagination links with a solid style, 1px width, and grey color.",
+        solution: "border: 1px solid grey;",
+        styles: {
+          border: "1px solid grey"
+        }
+      },
+      {
+        level: 4,
+        description: "Add a hover effect that changes the background color to light grey and text color to white.",
+        solution: "background-color: lightgrey; color: white;",
+        styles: {
+          ":hover": {
+            backgroundColor: "lightgrey",
+            color: "white"
+          }
+        }
+      },
+      {
+        level: 5,
+        description: "Apply a transition effect to smoothly animate color changes over 0.3 seconds.",
+        solution: "transition: color 0.3s, background-color 0.3s;",
+        styles: {
+          transition: "color 0.3s, background-color 0.3s"
+        }
+      },
+      {
+        level: 6,
+        description: "Add rounded corners to the pagination links with a border-radius of 4px.",
+        solution: "border-radius: 4px;",
+        styles: {
+          borderRadius: "4px"
+        }
+      },
+      {
+        level: 7,
+        description: "Create a pagination container with centered alignment.",
+        solution: "display: flex; justify-content: center; align-items: center;",
+        styles: {
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }
+      },
+      {
+        level: 8,
+        description: "Style the active pagination link with a background color of grey and white text color.",
+        solution: "background-color: grey; color: white;",
+        styles: {
+          "&.active": {
+            backgroundColor: "grey",
+            color: "white"
+          }
+        }
+      },
+      {
+        level: 9,
+        description: "Add a box shadow to the pagination links for a raised effect.",
+        solution: "box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);",
+        styles: {
+          boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)"
+        }
+      },
+      {
+        level: 10,
+        description: "Customize the pagination style with additional properties such as font size and font weight.",
+        solution: "font-size: 14px; font-weight: bold;",
+        styles: {
+          fontSize: "14px",
+          fontWeight: "bold"
+        }
+      }
+    ],
+    transforms: [
+      {
+        level: 1,
+        description: "Rotate the element by 45 degrees.",
+        solution: "transform: rotate(45deg);",
+        styles: {
+          transform: "rotate(45deg)"
+        }
+      },
+      {
+        level: 2,
+        description: "Scale the element to be twice its original size.",
+        solution: "transform: scale(2);",
+        styles: {
+          transform: "scale(2)"
+        }
+      },
+      {
+        level: 3,
+        description: "Translate the element 50 pixels to the right and 20 pixels down.",
+        solution: "transform: translate(50px, 20px);",
+        styles: {
+          transform: "translate(50px, 20px)"
+        }
+      },
+      {
+        level: 4,
+        description: "Skew the element horizontally by 30 degrees.",
+        solution: "transform: skewX(30deg);",
+        styles: {
+          transform: "skewX(30deg)"
+        }
+      },
+      {
+        level: 5,
+        description: "Rotate the element around the X-axis by 45 degrees.",
+        solution: "transform: rotateX(45deg);",
+        styles: {
+          transform: "rotateX(45deg)"
+        }
+      },
+      {
+        level: 6,
+        description: "Rotate the element around the Y-axis by 30 degrees.",
+        solution: "transform: rotateY(30deg);",
+        styles: {
+          transform: "rotateY(30deg)"
+        }
+      },
+      {
+        level: 7,
+        description: "Rotate the element around the Z-axis by 60 degrees.",
+        solution: "transform: rotateZ(60deg);",
+        styles: {
+          transform: "rotateZ(60deg)"
+        }
+      },
+      {
+        level: 8,
+        description: "Apply a perspective to the element.",
+        solution: "transform: perspective(500px);",
+        styles: {
+          transform: "perspective(500px)"
+        }
+      },
+      {
+        level: 9,
+        description: "Rotate the element in 3D space around the X, Y, and Z axes.",
+        solution: "transform: rotateX(45deg) rotateY(30deg) rotateZ(60deg);",
+        styles: {
+          transform: "rotateX(45deg) rotateY(30deg) rotateZ(60deg)"
+        }
+      },
+      {
+        level: 10,
+        description: "Translate the element along the X-axis by 50 pixels.",
+        solution: "transform: translateX(50px);",
+        styles: {
+          transform: "translateX(50px)"
+        }
+      }
+    ],
   },
   advanced : {}
 
