@@ -599,6 +599,90 @@ const challenges = {
         }
       }
     ],
+    text: [
+      {
+        level: 1,
+        description: "Set the text color to black.",
+        solution: "color: black;",
+        styles: {
+          color: "black"
+        }
+      },
+      {
+        level: 2,
+        description: "Set the text color to white and the background color to blue.",
+        solution: "color: white; background-color: blue;",
+        styles: {
+          color: "white",
+          backgroundColor: "blue"
+        }
+      },
+      {
+        level: 3,
+        description: "Align the text to the center and set the text direction to right to left.",
+        solution: "text-align: center; direction: rtl;",
+        styles: {
+          textAlign: "center",
+          direction: "rtl"
+        }
+      },
+      {
+        level: 4,
+        description: "Set the vertical alignment of the text to middle.",
+        solution: "vertical-align: middle;",
+        styles: {
+          verticalAlign: "middle"
+        }
+      },
+      {
+        level: 5,
+        description: "Add an underline to the text.",
+        solution: "text-decoration: underline;",
+        styles: {
+          textDecoration: "underline"
+        }
+      },
+      {
+        level: 6,
+        description: "Specify the color of the decoration line as red.",
+        solution: "text-decoration-color: red;",
+        styles: {
+          textDecorationColor: "red"
+        }
+      },
+      {
+        level: 7,
+        description: "Specify the style of the decoration line as dashed.",
+        solution: "text-decoration-style: dashed;",
+        styles: {
+          textDecorationStyle: "dashed"
+        }
+      },
+      {
+        level: 8,
+        description: "Specify the thickness of the decoration line as 2 pixels.",
+        solution: "text-decoration-width: 2px;",
+        styles: {
+          textDecorationWidth: "2px"
+        }
+      },
+      {
+        level: 9,
+        description: "Set the letter spacing to 2 pixels.",
+        solution: "letter-spacing: 2px;",
+        styles: {
+          letterSpacing: "2px"
+        }
+      },
+      {
+        level: 10,
+        description: "Apply text shadow with a shadow color of rgba(0, 0, 0, 0.5), horizontal offset of 2 pixels, vertical offset of 2 pixels, and blur radius of 3 pixels.",
+        solution: "text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);",
+        styles: {
+          textShadow: "2px 2px 3px rgba(0, 0, 0, 0.5)"
+        }
+      }
+    ],
   },
   intermediate : {},
   advanced : {}
