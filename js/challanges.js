@@ -415,6 +415,108 @@ const challenges = {
         }
       }
     ],
+    boxModel: [
+      {
+        level: 1,
+        description: "Set the width of the box to 100 pixels.",
+        solution: "width: 100px;",
+        styles: {
+          width: "100px",
+        }
+      },
+      {
+        level: 2,
+        description: "Set the height of the box to 150 pixels.",
+        solution: "height: 150px;",
+        styles: {
+          height: "150px",
+        }
+      },
+      {
+        level: 3,
+        description: "Set both the width and height of the box to 200 pixels.",
+        solution: "width: 200px; height: 200px;",
+        styles: {
+          width: "200px",
+          height: "200px",
+        }
+      },
+      {
+        level: 4,
+        description: "Set the width of the box to 300 pixels, add a padding of 20 pixels, and a background color of light pink.",
+        solution: "width: 300px; padding: 20px; background-color: lightpink;",
+        styles: {
+          width: "300px",
+          padding: "20px",
+          backgroundColor: "lightpink"
+        }
+      },
+      {
+        level: 5,
+        description: "Set the height of the box to 250 pixels, add a margin of 10 pixels, and a background color of light gray.",
+        solution: "height: 250px; margin: 10px; background-color: lightgray;",
+        styles: {
+          height: "250px",
+          margin: "10px",
+          backgroundColor: "lightgray"
+        }
+      },
+      {
+        level: 6,
+        description: "Float the box to the left and set a width of 200 pixels.",
+        solution: "float: left; width: 200px;",
+        styles: {
+          float: "left",
+          width: "200px",
+        }
+      },
+      {
+        level: 7,
+        description: "Set the height of the box to 300 pixels, add a margin of 15 pixels, a border of 2 pixels dashed red, and a background color of light yellow.",
+        solution: "height: 300px; margin: 15px; border: 2px dashed red; background-color: lightyellow;",
+        styles: {
+          height: "300px",
+          margin: "15px",
+          border: "2px dashed red",
+          backgroundColor: "lightyellow"
+        }
+      },
+      {
+        level: 8,
+        description: "Position the box absolutely with respect to its nearest positioned ancestor, 20 pixels from the top and 30 pixels from the left.",
+        solution: "position: absolute; top: 20px; left: 30px;",
+        styles: {
+          position: "absolute",
+          top: "20px",
+          left: "30px",
+        }
+      },
+      {
+        level: 9,
+        description: "Set the height of the box to 400 pixels, add a margin of 20 pixels, a padding of 15 pixels, a border of 4 pixels solid green, and a background color of light pink.",
+        solution: "height: 400px; margin: 20px; padding: 15px; border: 4px solid green; background-color: lightpink;",
+        styles: {
+          height: "400px",
+          margin: "20px",
+          padding: "15px",
+          border: "4px solid green",
+          backgroundColor: "lightpink"
+        }
+      },
+      {
+        level: 10,
+        description: "Set the width of the box to 450 pixels, set the height to 200 pixels, add a margin of 25 pixels, a padding of 20 pixels, a border of 5 pixels solid orange, and a background color of light gray.",
+        solution: "width: 450px; height: 200px; margin: 25px; padding: 20px; border: 5px solid orange; background-color: lightgray;",
+        styles: {
+          width: "450px",
+          height: "200px",
+          margin: "25px",
+          padding: "20px",
+          border: "5px solid orange",
+          backgroundColor: "lightgray"
+        }
+      }
+    ],
   },
   intermediate : {},
   advanced : {}
