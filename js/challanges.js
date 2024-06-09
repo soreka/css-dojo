@@ -1317,6 +1317,351 @@ const challenges = {
         }
       }
     ],
+    navigationBar: [
+      {
+        level: 1,
+        description: "Style the navigation bar with a background color of black and white text color.",
+        solution: "background-color: black; color: white;",
+        styles: {
+          backgroundColor: "black",
+          color: "white"
+        }
+      },
+      {
+        level: 2,
+        description: "Add padding to the navigation links to increase spacing.",
+        solution: "padding: 10px 20px;",
+        styles: {
+          padding: "10px 20px"
+        }
+      },
+      {
+        level: 3,
+        description: "Apply a border to the navigation bar with a solid style, 1px width, and grey color.",
+        solution: "border-bottom: 1px solid grey;",
+        styles: {
+          borderBottom: "1px solid grey"
+        }
+      },
+      {
+        level: 4,
+        description: "Add a hover effect that changes the background color to grey and text color to black.",
+        solution: "background-color: grey; color: black;",
+        styles: {
+          ":hover": {
+            backgroundColor: "grey",
+            color: "black"
+          }
+        }
+      },
+      {
+        level: 5,
+        description: "Apply a transition effect to smoothly animate color changes over 0.3 seconds.",
+        solution: "transition: color 0.3s, background-color 0.3s;",
+        styles: {
+          transition: "color 0.3s, background-color 0.3s"
+        }
+      },
+      {
+        level: 6,
+        description: "Add rounded corners to the navigation links with a border-radius of 4px.",
+        solution: "border-radius: 4px;",
+        styles: {
+          borderRadius: "4px"
+        }
+      },
+      {
+        level: 7,
+        description: "Create a navigation container with centered alignment.",
+        solution: "display: flex; justify-content: center;",
+        styles: {
+          display: "flex",
+          justifyContent: "center"
+        }
+      },
+      {
+        level: 8,
+        description: "Style the active navigation link with a background color of grey and white text color.",
+        solution: "background-color: grey; color: white;",
+        styles: {
+          "&.active": {
+            backgroundColor: "grey",
+            color: "white"
+          }
+        }
+      },
+      {
+        level: 9,
+        description: "Add a box shadow to the navigation bar for a raised effect.",
+        solution: "box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);",
+        styles: {
+          boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)"
+        }
+      },
+      {
+        level: 10,
+        description: "Customize the navigation bar style with additional properties such as font size and font weight.",
+        solution: "font-size: 16px; font-weight: bold;",
+        styles: {
+          fontSize: "16px",
+          fontWeight: "bold"
+        }
+      }
+    ],
+    mediaQueries: [
+      {
+        level: 1,
+        description: "Create a media query that targets screens smaller than 600px and changes the background color.",
+        solution: "@media (max-width: 600px) { body { background-color: lightblue; } }",
+        styles: {
+          "@media (max-width: 600px)": {
+            body: {
+              backgroundColor: "lightblue"
+            }
+          }
+        }
+      },
+      {
+        level: 2,
+        description: "Target screens between 600px and 900px and change the font size.",
+        solution: "@media (min-width: 600px) and (max-width: 900px) { body { font-size: 16px; } }",
+        styles: {
+          "@media (min-width: 600px) and (max-width: 900px)": {
+            body: {
+              fontSize: "16px"
+            }
+          }
+        }
+      },
+      {
+        level: 3,
+        description: "Adjust padding and margin for tablets with a width greater than 900px.",
+        solution: "@media (min-width: 900px) { .container { padding: 20px; margin: 0 auto; } }",
+        styles: {
+          "@media (min-width: 900px)": {
+            ".container": {
+              padding: "20px",
+              margin: "0 auto"
+            }
+          }
+        }
+      },
+      {
+        level: 4,
+        description: "Target landscape orientation and adjust the layout.",
+        solution: "@media (orientation: landscape) { .container { flex-direction: row; } }",
+        styles: {
+          "@media (orientation: landscape)": {
+            ".container": {
+              flexDirection: "row"
+            }
+          }
+        }
+      },
+      {
+        level: 5,
+        description: "Change the navigation layout for screens larger than 1200px.",
+        solution: "@media (min-width: 1200px) { .nav { display: flex; justify-content: space-between; } }",
+        styles: {
+          "@media (min-width: 1200px)": {
+            ".nav": {
+              display: "flex",
+              justifyContent: "space-between"
+            }
+          }
+        }
+      },
+      {
+        level: 6,
+        description: "Target high-resolution displays and adjust image quality.",
+        solution: "@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { img { image-rendering: auto; } }",
+        styles: {
+          "@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)": {
+            img: {
+              imageRendering: "auto"
+            }
+          }
+        }
+      },
+      {
+        level: 7,
+        description: "Adjust font styles for screens with a pixel density above 1.5.",
+        solution: "@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 1.5dppx) { body { font-size: 18px; } }",
+        styles: {
+          "@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 1.5dppx)": {
+            body: {
+              fontSize: "18px"
+            }
+          }
+        }
+      },
+      {
+        level: 8,
+        description: "Target print media and adjust page layout.",
+        solution: "@media print { body { background-color: white; color: black; } }",
+        styles: {
+          "@media print": {
+            body: {
+              backgroundColor: "white",
+              color: "black"
+            }
+          }
+        }
+      },
+      {
+        level: 9,
+        description: "Create a media query for devices with a max-width of 320px and adjust the layout.",
+        solution: "@media (max-width: 320px) { .container { width: 100%; } }",
+        styles: {
+          "@media (max-width: 320px)": {
+            ".container": {
+              width: "100%"
+            }
+          }
+        }
+      },
+      {
+        level: 10,
+        description: "Combine multiple media features to create a complex media query targeting specific device configurations.",
+        solution: "@media (min-width: 800px) and (orientation: landscape), (min-width: 1200px) { .container { max-width: 1000px; } }",
+        styles: {
+          "@media (min-width: 800px) and (orientation: landscape), (min-width: 1200px)": {
+            ".container": {
+              maxWidth: "1000px"
+            }
+          }
+        }
+      }
+    ],
+    intermediateRandomChallenges: [
+      {
+        level: 1,
+        description: "Create a semi-transparent overlay with opacity and a background color.",
+        solution: "position: relative; &::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); }",
+        styles: {
+          position: "relative",
+          "&::after": {
+            content: "''",
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.5)"
+          }
+        }
+      },
+      {
+        level: 2,
+        description: "Style a list with alternating background colors and custom bullet points.",
+        solution: "list-style-type: none; li { padding: 10px; &:nth-child(even) { background-color: #f0f0f0; } &:before { content: '•'; color: blue; margin-right: 10px; } }",
+        styles: {
+          listStyleType: "none",
+          li: {
+            padding: "10px",
+            "&:nth-child(even)": {
+              backgroundColor: "#f0f0f0"
+            },
+            "&:before": {
+              content: "'•'",
+              color: "blue",
+              marginRight: "10px"
+            }
+          }
+        }
+      },
+      {
+        level: 3,
+        description: "Create a table with borders and centered content.",
+        solution: "border: 1px solid #ccc; td { text-align: center; }",
+        styles: {
+          border: "1px solid #ccc",
+          td: {
+            textAlign: "center"
+          }
+        }
+      },
+      {
+        level: 4,
+        description: "Number the list items using counters and style them differently.",
+        solution: "counter-reset: item; li { counter-increment: item; &:before { content: counter(item) '. '; color: red; } }",
+        styles: {
+          counterReset: "item",
+          li: {
+            counterIncrement: "item",
+            "&:before": {
+              content: "counter(item) '. '",
+              color: "red"
+            }
+          }
+        }
+      },
+      {
+        level: 5,
+        description: "Create a pagination system with links and hover effects.",
+        solution: "a { text-decoration: none; &:hover { text-decoration: underline; } }",
+        styles: {
+          a: {
+            textDecoration: "none",
+            "&:hover": {
+              textDecoration: "underline"
+            }
+          }
+        }
+      },
+      {
+        level: 6,
+        description: "Apply various transform effects to an element.",
+        solution: "transform: rotate(45deg) scale(1.5) translate(50px, 20px) skewX(30deg);",
+        styles: {
+          transform: "rotate(45deg) scale(1.5) translate(50px, 20px) skewX(30deg)"
+        }
+      },
+      {
+        level: 7,
+        description: "Style a navigation bar with hover effects and a box shadow.",
+        solution: "box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); a { &:hover { background-color: #f0f0f0; } }",
+        styles: {
+          boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+          a: {
+            "&:hover": {
+              backgroundColor: "#f0f0f0"
+            }
+          }
+        }
+      },
+      {
+        level: 8,
+        description: "Create media queries to adjust layout for different screen sizes.",
+        solution: "@media (max-width: 768px) { .container { width: 100%; } }",
+        styles: {
+          "@media (max-width: 768px)": {
+            ".container": {
+              width: "100%"
+            }
+          }
+        }
+      },
+      {
+        level: 9,
+        description: "Design a card component with rounded corners and a background image.",
+        solution: "border-radius: 8px; background-image: url('card-bg.jpg');",
+        styles: {
+          borderRadius: "8px",
+          backgroundImage: "url('card-bg.jpg')"
+        }
+      },
+      {
+        level: 10,
+        description: "Implement a responsive grid layout using CSS Grid or Flexbox.",
+        solution: "display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;",
+        styles: {
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+          gap: "20px"
+        }
+      }
+    ]
   },
   advanced : {}
 
