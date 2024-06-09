@@ -164,6 +164,91 @@ const challenges = {
         }
       }
     ],
+    borders: [
+      {
+        level: 1,
+        description: "Set the border style of the box to solid.",
+        solution: "border-style: solid;",
+        styles: {
+          borderStyle: "solid"
+        }
+      },
+      {
+        level: 2,
+        description: "Set the border width of the box to 2px.",
+        solution: "border-width: 2px;",
+        styles: {
+          borderWidth: "2px"
+        }
+      },
+      {
+        level: 3,
+        description: "Set the border color of the box to red.",
+        solution: "border-color: red;",
+        styles: {
+          borderColor: "red"
+        }
+      },
+      {
+        level: 4,
+        description: "Set the border of the box to have a different style for each side: top - dotted, right - dashed, bottom - solid, left - double.",
+        solution: "border-top-style: dotted; border-right-style: dashed; border-bottom-style: solid; border-left-style: double;",
+        styles: {
+          borderTopStyle: "dotted",
+          borderRightStyle: "dashed",
+          borderBottomStyle: "solid",
+          borderLeftStyle: "double"
+        }
+      },
+      {
+        level: 5,
+        description: "Use the shorthand property to set the border of the box to be 2px solid black.",
+        solution: "border: 2px solid black;",
+        styles: {
+          border: "2px solid black"
+        }
+      },
+      {
+        level: 6,
+        description: "Set the border radius of the box to 5px.",
+        solution: "border-radius: 5px;",
+        styles: {
+          borderRadius: "5px"
+        }
+      },
+      {
+        level: 7,
+        description: "Set the border radius of the box to 50%.",
+        solution: "border-radius: 50%;",
+        styles: {
+          borderRadius: "50%"
+        }
+      },
+      {
+        level: 8,
+        description: "Set the border radius of the box to 10px for the top-left corner, 20px for the top-right corner, 30px for the bottom-right corner, and 40px for the bottom-left corner.",
+        solution: "border-radius: 10px 20px 30px 40px;",
+        styles: {
+          borderRadius: "10px 20px 30px 40px"
+        }
+      },
+      {
+        level: 9,
+        description: "Set the border width of the box to 5px, with a solid style and a blue color.",
+        solution: "border: 5px solid blue;",
+        styles: {
+          border: "5px solid blue"
+        }
+      },
+      {
+        level: 10,
+        description: "Create a bordered box with a dashed border, a width of 3px, and a color of green.",
+        solution: "border: 3px dashed green;",
+        styles: {
+          border: "3px dashed green"
+        }
+      }
+    ],
   },
   intermediate : {},
   advanced : {}
