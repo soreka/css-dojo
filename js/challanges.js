@@ -899,11 +899,10 @@ const challenges = {
       },
       {
         level: 8,
-        description: "Design a banner with a background image, centered text, and 10 pixels of padding.",
-        solution: "background-image: url('banner.jpg'); background-size: cover; text-align: center; padding: 10px;",
+        description: "Design a banner with a solid background color, centered text, and 10 pixels of padding.",
+        solution: "background-color: lightblue; text-align: center; padding: 10px;",
         styles: {
-          backgroundImage: "url('banner.jpg')",
-          backgroundSize: "cover",
+          backgroundColor: "lightblue",
           textAlign: "center",
           padding: "10px"
         }
