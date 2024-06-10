@@ -1631,9 +1631,9 @@ const challenges = {
       {
         level: 6,
         description: "Target high-resolution displays and adjust image quality.",
-        solution: "@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { img { image-rendering: auto; } }",
+        solution: "@media (min-width: 1024px) { img { image-rendering: auto; } }",
         styles: {
-          "@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)": {
+          "@media (min-width: 1024px)": {
             img: {
               imageRendering: "auto"
             }
@@ -1643,15 +1643,15 @@ const challenges = {
       {
         level: 7,
         description: "Adjust font styles for screens with a pixel density above 1.5.",
-        solution: "@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 1.5dppx) { body { font-size: 18px; } }",
+        solution: "@media (max-width: 768px) { body { font-size: 16px; } }",
         styles: {
-          "@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 1.5dppx)": {
+          "@media (max-width: 768px)": {
             body: {
-              fontSize: "18px"
+              fontSize: "16px"
             }
           }
         }
-      },
+      },  
       {
         level: 8,
         description: "Target print media and adjust page layout.",
