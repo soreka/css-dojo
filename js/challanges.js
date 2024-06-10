@@ -1801,11 +1801,11 @@ const challenges = {
       },
       {
         level: 9,
-        description: "Design a card component with rounded corners and a background image.",
-        solution: "border-radius: 8px; background-image: url('card-bg.jpg');",
+        description: "Design a card component with rounded corners and a solid background color.",
+        solution: "border-radius: 8px; background-color: lightgray;",
         styles: {
           borderRadius: "8px",
-          backgroundImage: "url('card-bg.jpg')"
+          backgroundColor: "lightgray"
         }
       },
       {
