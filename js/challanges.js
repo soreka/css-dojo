@@ -1056,10 +1056,10 @@ const challenges = {
       },
       {
         level: 4,
-        description: "Use the list shorthand property to set list style to none, position to inside, and image to 'url('image.png')'.",
-        solution: "list-style: none inside url('image.png');",
+        description: "Use the list shorthand property to set list style to none, position to inside, and color to 'lightgreen'.",
+        solution: "list-style: none inside lightgreen;",
         styles: {
-          listStyle: "none inside url('image.png')"
+          listStyle: "none inside lightgreen"
         }
       },
       {
@@ -1081,10 +1081,10 @@ const challenges = {
       },
       {
         level: 7,
-        description: "Set a custom image as the list item marker.",
-        solution: "list-style-image: url('custom-marker.png');",
+        description: "Set a custom color as the list item marker.",
+        solution: "list-style: disc lightblue;",
         styles: {
-          listStyleImage: "url('custom-marker.png')"
+          listStyle: "disc lightblue"
         }
       },
       {
