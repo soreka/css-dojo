@@ -911,11 +911,11 @@ const challenges = {
       {
         level: 9,
         description: "Create a layout with three equally spaced columns and 15 pixels of padding between them.",
-        solution: "display: inline-block; width: calc(33.33% - 5px); margin-right: 15px;",
+        solution: "display: inline-block; width: 30%; margin-right: 5%;",
         styles: {
           display: "inline-block",
-          width: "calc(33.33% - 5px)",
-          marginRight: "15px"
+          width: "30%",
+          marginRight: "5%"
         }
       },
       {
