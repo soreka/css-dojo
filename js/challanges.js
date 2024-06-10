@@ -7,7 +7,14 @@ const challenges = {
         solution: "background-color: blue;",
         styles: {
           backgroundColor: "blue"
-        }
+        },
+        hints: [
+          "Hint 1: Picture the webpage as a canvas. What's the first thing you'd change?",
+          "Hint 2: Look for a CSS property that sets the backdrop of an element.",
+          "Hint 3: This property involves the background and a specific attribute of it.",
+          "Hint 4: Consider a color often associated with oceans and calmness.",
+          "Hint 5: Combine 'background-color' with the serene color of the ocean."
+        ]
       },
       {
         level: 2,
@@ -15,7 +22,14 @@ const challenges = {
         solution: "color: red;",
         styles: {
           color: "red"
-        }
+        },
+        hints: [
+          "Hint 1: Imagine the text as a brush stroke on the canvas. How would you alter its hue?",
+          "Hint 2: Search for a CSS property that affects the color of text.",
+          "Hint 3: This property deals directly with the visual aspect of text.",
+          "Hint 4: Think about the color of something hot or fiery.",
+          "Hint 5: Combine 'color' with the intense hue of fire."
+        ]
       },
       {
         level: 3,
@@ -23,7 +37,14 @@ const challenges = {
         solution: "border-color: green;",
         styles: {
           borderColor: "green"
-        }
+        },
+        hints: [
+          "Hint 1: Envision outlining the edges of your canvas. What tool would you use?",
+          "Hint 2: Explore CSS properties that define the border appearance.",
+          "Hint 3: This property modifies the color of the border surrounding an element.",
+          "Hint 4: Consider the color of leaves on a healthy plant.",
+          "Hint 5: Pair 'border-color' with the vibrant green of fresh foliage."
+        ]
       },
       {
         level: 4,
@@ -31,7 +52,14 @@ const challenges = {
         solution: "background-color: #3498db;",
         styles: {
           backgroundColor: "#3498db"
-        }
+        },
+        hints: [
+          "Hint 1: Visualize painting a specific area with a precise shade. What method would you use?",
+          "Hint 2: Search for a way to represent colors using hexadecimal values in CSS.",
+          "Hint 3: This property involves setting the background color using hexadecimal notation.",
+          "Hint 4: Think about a color often associated with clear skies and tranquility.",
+          "Hint 5: Utilize 'background-color' with the soothing hue of a cloudless sky."
+        ]
       },
       {
         level: 5,
@@ -39,7 +67,14 @@ const challenges = {
         solution: "color: rgb(255, 99, 71);",
         styles: {
           color: "rgb(255, 99, 71)"
-        }
+        },
+        hints: [
+          "Hint 1: Imagine mixing light in varying intensities to create a specific color. What method does this resemble?",
+          "Hint 2: Look for a CSS property that allows you to specify colors using red, green, and blue values.",
+          "Hint 3: This property enables precise control over the text color using RGB values.",
+          "Hint 4: Consider the color of ripe tomatoes or strawberries.",
+          "Hint 5: Incorporate 'color' with the rich red of a ripe fruit."
+        ]
       },
       {
         level: 6,
@@ -47,7 +82,14 @@ const challenges = {
         solution: "border-color: hsl(120, 100%, 50%);",
         styles: {
           borderColor: "hsl(120, 100%, 50%)"
-        }
+        },
+          hints: [
+            "Hint 1: Imagine adjusting the border appearance using a specific method. What could it be?",
+            "Hint 2: Look for a CSS property that allows you to define border color in a unique way.",
+            "Hint 3: This property involves specifying the border color using a different color representation.",
+            "Hint 4: Consider the color wheel and how different color systems can be represented.",
+            "Hint 5: Use 'border-color' with the specified hue, saturation, and lightness values."
+          ]
       },
       {
         level: 7,
@@ -55,7 +97,14 @@ const challenges = {
         solution: "background-color: rgba(255, 165, 0, 0.5);",
         styles: {
           backgroundColor: "rgba(255, 165, 0, 0.5)"
-        }
+        },
+        hints: [
+          "Hint 1: Picture the background of the box as a translucent layer. How would you describe it?",
+          "Hint 2: Explore CSS properties related to setting background color with transparency.",
+          "Hint 3: This property involves specifying the background color with an alpha channel.",
+          "Hint 4: Think about representing colors with a combination of red, green, blue, and opacity.",
+          "Hint 5: Combine 'background-color' with the RGBA color values provided."
+        ]
       },
       {
         level: 8,
@@ -63,7 +112,14 @@ const challenges = {
         solution: "color: hsl(240, 100%, 50%);",
         styles: {
           color: "hsl(240, 100%, 50%)"
-        }
+        },
+        hints: [
+          "Hint 1: Visualize the text color as a beam of light. How would you manipulate it?",
+          "Hint 2: Search for a CSS property that allows you to define text color using a different color model.",
+          "Hint 3: This property involves specifying the text color using hue, saturation, and lightness values.",
+          "Hint 4: Consider the color spectrum and how hues are represented in different color systems.",
+          "Hint 5: Utilize 'color' with the specified hue, saturation, and lightness values."
+        ]
       },
       {
         level: 9,
@@ -71,7 +127,14 @@ const challenges = {
         solution: "border-color: #FF5733;",
         styles: {
           borderColor: "#FF5733"
-        }
+        },
+        hints: [
+          "Hint 1: Imagine painting the borders of the box with a specific color. What notation could you use?",
+          "Hint 2: Look for a way to represent colors using hexadecimal values in CSS.",
+          "Hint 3: This property involves setting the border color using hexadecimal notation.",
+          "Hint 4: Consider the hexadecimal representation of the specified color.",
+          "Hint 5: Utilize 'border-color' with the specified hexadecimal color."
+        ]
       },
       {
         level: 10,
@@ -79,7 +142,14 @@ const challenges = {
         solution: "background: linear-gradient(to right, red, yellow);",
         styles: {
           background: "linear-gradient(to right, red, yellow)"
-        }
+        },
+        hints: [
+          "Hint 1: Envision the background transitioning smoothly from one color to another. What technique would you use?",
+          "Hint 2: Explore CSS properties related to creating gradients.",
+          "Hint 3: This property involves setting the background using a linear gradient.",
+          "Hint 4: Consider the direction and colors specified in the linear gradient.",
+          "Hint 5: Use 'background' with the linear gradient specified from red to yellow."
+        ]
       }
     ],
     backgrounds: [
