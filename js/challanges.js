@@ -152,22 +152,37 @@ const challenges = {
         ]
       }
     ],
-    backgrounds: [
+    backgrounds : [
       {
         level: 1,
         description: "Set the background color of the box to lightgrey.",
         solution: "background-color: lightgrey;",
         styles: {
           backgroundColor: "lightgrey"
-        }
+        },
+        hints: [
+          "Hint 1: Consider how to set the background color of an element. What CSS property allows you to do this?",
+          "Hint 2: Look for a CSS property that controls the background color.",
+          "Hint 3: This property involves setting the color of the background to a specific value.",
+          "Hint 4: Consider how you can make the background light grey.",
+          "Hint 5: Utilize the 'background-color' property with the specified value for light grey."
+        ]
       },
       {
         level: 2,
-        description: "Set the opacity of the box to 0.5.",
-        solution: "opacity: 0.5;",
+        description: "Set the background color of the box to teal and the border style to dashed.",
+        solution: "background-color: teal; border-style: dashed;",
         styles: {
-          opacity: "0.5"
-        }
+          backgroundColor: "teal",
+          borderStyle: "dashed"
+        },
+        hints: [
+          "Hint 1: Visualize changing the background color and border style of the box. What CSS properties might you use?",
+          "Hint 2: Look for CSS properties that control the background color and border style.",
+          "Hint 3: These properties involve setting the color of the background and the style of the border.",
+          "Hint 4: Consider how you can make the background teal and the border style dashed.",
+          "Hint 5: Utilize the 'background-color' and 'border-style' properties with the specified values."
+        ]
       },
       {
         level: 3,
@@ -175,7 +190,14 @@ const challenges = {
         solution: "background-color: rgba(255, 0, 0, 0.3);",
         styles: {
           backgroundColor: "rgba(255, 0, 0, 0.3)"
-        }
+        },
+        hints: [
+          "Hint 1: Imagine setting the background color of the box with a specific opacity. What CSS property could you use?",
+          "Hint 2: Look for a CSS property that allows you to specify the opacity of an element.",
+          "Hint 3: This property involves setting the opacity of the background color.",
+          "Hint 4: Consider how you can make the background red with 30% opacity.",
+          "Hint 5: Utilize the 'background-color' property with the specified value for red and opacity."
+        ]
       },
       {
         level: 4,
@@ -183,55 +205,108 @@ const challenges = {
         solution: "background-color: lightblue;",
         styles: {
           backgroundColor: "lightblue"
-        }
+        },
+        hints: [
+          "Hint 1: Think about how to set the background color of the box. What CSS property might you use?",
+          "Hint 2: Look for a CSS property that controls the background color.",
+          "Hint 3: This property involves setting the color of the background to a specific value.",
+          "Hint 4: Consider how you can make the background light blue.",
+          "Hint 5: Utilize the 'background-color' property with the specified value for light blue."
+        ]
       },
       {
         level: 5,
-        description: "Set a background image for the box using the URL 'https://www.w3schools.com/css/img_tree.png'.",
-        solution: "background-image: url('https://www.w3schools.com/css/img_tree.png');",
+        description: "Set the background color of the box to cornsilk and the border style to solid.",
+        solution: "background-color: cornsilk; border-style: solid;",
         styles: {
-          backgroundImage: "url('https://www.w3schools.com/css/img_tree.png')"
-        }
+          backgroundColor: "cornsilk",
+          borderStyle: "solid"
+        },
+        hints: [
+          "Hint 1: Visualize changing the background color and border style of the box. What CSS properties might you use?",
+          "Hint 2: Look for CSS properties that control the background color and border style.",
+          "Hint 3: These properties involve setting the color of the background and the style of the border.",
+          "Hint 4: Consider how you can make the background cornsilk and the border style solid.",
+          "Hint 5: Utilize the 'background-color' and 'border-style' properties with the specified values."
+        ]
       },
       {
         level: 6,
-        description: "Set the background image of the box to not repeat.",
-        solution: "background-repeat: no-repeat;",
+        description: "Set the background color of the box to salmon.",
+        solution: "background-color: salmon;",
         styles: {
-          backgroundRepeat: "no-repeat"
-        }
+          backgroundColor: "salmon"
+        },
+        hints: [
+          "Hint 1: Imagine setting the background color of the box. What CSS property could you use?",
+          "Hint 2: Look for a CSS property that controls the background color.",
+          "Hint 3: This property involves setting the color of the background to a specific value.",
+          "Hint 4: Consider how you can make the background salmon.",
+          "Hint 5: Utilize the 'background-color' property with the specified value for salmon."
+        ]
       },
       {
         level: 7,
-        description: "Set the position of the background image to be centered.",
-        solution: "background-position: center;",
+        description: "Set the background color of the box to violet and the opacity to 0.7.",
+        solution: "background-color: violet; opacity: 0.7;",
         styles: {
-          backgroundPosition: "center"
-        }
+          backgroundColor: "violet",
+          opacity: "0.7"
+        },
+        hints: [
+          "Hint 1: Think about setting the background color of the box with a specific opacity. What CSS property might you use?",
+          "Hint 2: Look for a CSS property that allows you to specify the opacity of an element.",
+          "Hint 3: This property involves setting the opacity of the background color.",
+          "Hint 4: Consider how you can make the background violet with 70% opacity.",
+          "Hint 5: Utilize the 'background-color' property with the specified value for violet and opacity."
+        ]
       },
       {
         level: 8,
-        description: "Set the background color of the element to cyan.",
-        solution: "background-color: cyan;",
+        description: "Set the background color of the box to peachpuff.",
+        solution: "background-color: peachpuff;",
         styles: {
-          backgroundColor: "cyan"
-        }
+          backgroundColor: "peachpuff"
+        },
+        hints: [
+          "Hint 1: Visualize changing the background color of the box. What CSS property might you use?",
+          "Hint 2: Look for a CSS property that controls the background color.",
+          "Hint 3: This property involves setting the color of the background to a specific value.",
+          "Hint 4: Consider how you can make the background peachpuff.",
+          "Hint 5: Utilize the 'background-color' property with the specified value for peachpuff."
+        ]
       },
       {
         level: 9,
-        description: "Set the background image of the box to be fixed in place.",
-        solution: "background-attachment: fixed;",
+        description: "Set the background color of the box to lightcoral, the border style to dotted, and the opacity to 0.6.",
+        solution: "background-color: lightcoral; border-style: dotted; opacity: 0.6;",
         styles: {
-          backgroundAttachment: "fixed"
-        }
+          backgroundColor: "lightcoral",
+          borderStyle: "dotted",
+          opacity: "0.6"
+        },
+        hints: [
+          "Hint 1: Imagine changing the background color and border style of the box, along with its opacity. What CSS properties could you use?",
+          "Hint 2: Look for CSS properties that control the background color, border style, and opacity.",
+          "Hint 3: These properties involve setting the color of the background, the style of the border, and the opacity.",
+          "Hint 4: Consider how you can make the background light coral, the border style dotted, and the opacity 60%.",
+          "Hint 5: Utilize the 'background-color', 'border-style', and 'opacity' properties with the specified values."
+        ]
       },
       {
         level: 10,
-        description: "Set a linear gradient background from blue to green.",
-        solution: "background-image: linear-gradient(to right, blue, green);",
+        description: "Set a linear gradient background from red to yellow.",
+        solution: "background-image: linear-gradient(to right, red, yellow);",
         styles: {
-          backgroundImage: "linear-gradient(to right, blue, green)"
-        }
+          backgroundImage: "linear-gradient(to right, red, yellow)"
+        },
+        hints: [
+          "Hint 1: Think about creating a linear gradient background for the box. What CSS property might you use?",
+          "Hint 2: Look for a CSS property that allows you to create gradients.",
+          "Hint 3: This property involves specifying the type and colors of the gradient.",
+          "Hint 4: Consider how you can create a linear gradient from red to yellow.",
+          "Hint 5: Utilize the 'background-image' property with the specified linear gradient values."
+        ]  
       }
     ],
     borders: [
