@@ -1,4 +1,4 @@
-import {feedChallange} from "./challangeCreator.js" 
+import { feedChallange } from "./challangeCreator.js"
 var cssCodeMirror = CodeMirror.fromTextArea(
   document.getElementById("css-code-editor"),
   {
@@ -8,9 +8,9 @@ var cssCodeMirror = CodeMirror.fromTextArea(
     theme: "ttcn",
     lineNumbers: true,
     extraKeys: { "Ctrl-Space": "autocomplete" },
-    
+
   }
-  
+
 );
 var htmlCodeMirror = CodeMirror(document.getElementById("js-code-editor"), {
   value: "<!-- write your HTML Here -->\n",
@@ -19,7 +19,7 @@ var htmlCodeMirror = CodeMirror(document.getElementById("js-code-editor"), {
   theme: "xq-light",
   lineNumbers: true,
   extraKeys: { "Ctrl-Space": "autocomplete" },
- 
+
 });
 //////////
 function createStyle(cssText) {
