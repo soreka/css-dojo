@@ -1,15 +1,19 @@
 import challanges from "./challanges.js";
 
 let basicStyles = ["width", "height", "background-color"];
+
+
 export function feedChallange(level = 1, type = 'shadows') {
   let challange = getChallange(type, level);
-  console.log(challange);
+  console.log(challanges.advanced[type]);
+
   // get the target elements
   let description = document.getElementById("level-description");
   let cssTips = document.getElementById("css-tips");
   // update the challange description
   description.textContent = "Challange :" + challange.description;
   // add the css props
+  cssTips.innerHTML=''
   for (let style in challange.styles) {
     const liElement = document.createElement("li");
     liElement.textContent = String(style);
@@ -30,11 +34,6 @@ export function feedChallange(level = 1, type = 'shadows') {
   //     .map((e) => e[0]);
 }
 
-function buildStylesString(stylesObj) {
-  let styles = "";
-  for (style in stylesObj) {
-  }
-}
 
 function getDeafultStyleValue(style) {
   switch (style) {
@@ -74,8 +73,7 @@ function addBasicStyles(styleObj) {
 //// get random challange from the challanges  object with the wanted level 
 
 function getChallange(type = "shadows", level) {
-  // console.log(challanges[type]);
-  let targetLevels = challanges[type].filter((lvl) => lvl.level == level);
+  let targetLevels = challanges.advanced[type].filter((challange) => challange.level == level);  
   let randIndex = getRandomInt(0, targetLevels.length - 1);
   return targetLevels[randIndex];
 }

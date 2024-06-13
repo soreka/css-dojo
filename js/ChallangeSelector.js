@@ -1,15 +1,18 @@
 import { feedChallange } from "./challangeCreator.js";
+import challenges from "./challanges.js";
 
 document.addEventListener("DOMContentLoaded", function () {
     const levelButtons = document.querySelectorAll(".level-button");
     const modal = document.getElementById("modal");
     const closeButton = document.querySelector(".close");
     const levelContainer = document.getElementById("level-container");
+    const decrementButtoLevel = document.querySelector(".arrow-left");
+    const IncrementButtonLvel = document.querySelector(".arrow-right");
 
     levelButtons.forEach(function (button) {
         button.addEventListener("click", function () {
             modal.style.display = "block";
-            const totalLevels = 10;
+            const totalLevels = challenges.advanced.shadows.length;
             generateLevelCircles(totalLevels);
         });
     });
@@ -24,6 +27,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    //this function for change level using the button of right and left 
+    function ChangeLevel (level){
+    }
+    //
     function generateLevelCircles(totalLevels) {
         levelContainer.innerHTML = "";
         for (let i = 1; i <= totalLevels; i++) {
@@ -38,6 +45,5 @@ document.addEventListener("DOMContentLoaded", function () {
             levelContainer.appendChild(levelButton);
         }
     }
-
 
 });
