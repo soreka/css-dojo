@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,60 +14,74 @@
 
     <title>CSS Game</title>
 </head>
-<body >
+
+<body>
     <div class="outer-container">
-        <section  class="game-screen">
-            
+        <section class="game-screen">
             <h1 class="title">your target Element</h1>
             <div>
                 <div id="myDiv">This is the target element</div>
             </div>
-            
             <div class="target">
                 <h1 class="title">your styled Element</h1>
                 <div id="toShow">
-
                 </div>
             </div>
         </section>
-        <section class="game-info" style="background-image: url('./image-info.jpg');background-position: center; width: 100%;height: 100%;background-repeat:no-repeat;background-size: cover;" >
-            <div class="header" name="header" >
+        <section class="game-info"
+            style="background-image: url('./image-info.jpg');background-position: center; width: 100%;height: 100%;background-repeat:no-repeat;background-size: cover;">
+            <div class="header" name="header">
 
                 <div>
-                    <h1 class="title main" >CSS Ninja Dojo</h1>
+                    <h1 class="title main">CSS Ninja Dojo</h1>
                 </div>
                 <div class="level-selection">
-                    <span class="arrow-left">
-                        <i class="fa-solid fa-angle-left" ></i>
-                    </span>
-                    <span class="level-element">current level</span>
-                    <span class="arrow-right">
-                        <i class="fa-solid fa-angle-right" ></i>
-                    </span>
+                    <button>
+                        <span class="arrow-left">
+                            <i class="fa-solid fa-angle-left"></i>
+                        </span>
+                    </button>
+                    <button class="level-button">
+                        <span class="level-element">Current Level</span>
+                    </button>
+                    <button>
+                        <span class="arrow-right">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </span>
+                    </button>
                 </div>
-            
             </div>
             <p class="label">Welcome to CSS DOJO, a game where you learn how to write css code !,
-                 follow up the challanges and use the styles below to match the target element </p>
+                follow up the challanges and use the styles below to match the target element </p>
             <p class="label" id="level-description"></p>
             <h4 class="label">use these css styles to make the target</h4>
             <ul class="label" id="css-tips"></ul>
             <div class="code-container">
                 <div class="mode-changer">
-                    <button id="css-mode-button" class="mode-button" name="css" >CSS</button>
+                    <button id="css-mode-button" class="mode-button" name="css">CSS</button>
                     <button id="js-mode-button" class="mode-button" name="js">HTML</button>
                 </div>
-                <div id="css-container"  >
-                    <textarea  id="css-code-editor"  ></textarea>
+                <div id="css-container">
+                    <textarea id="css-code-editor"></textarea>
                 </div>
-                <div id="js-container" >
-                    <div id="js-code-editor" ></div>
+                <div id="js-container">
+                    <div id="js-code-editor"></div>
                 </div>
-                <button id="run-code" class="run-button" >Run</button>
+                <button id="run-code" class="run-button">Run</button>
             </div>
-        </section>
+            <!-- code for modal -->
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div id="level-container" class="level-container">
+                        <!-- Level buttons will be added dynamically here -->
+                    </div>
+                </div>
+            </div>
+            <!--end code for modal -->
 
-    </div>  
+        </section>
+    </div>
     <script src="codemirror-5.65.16/lib/codemirror.js"></script>
     <script src="codemirror-5.65.16/mode/css/css.js"></script>
     <script src="codemirror-5.65.16/mode/xml/xml.js"></script>
@@ -75,7 +90,7 @@
     <script src="codemirror-5.65.16/addon/hint/css-hint.js"></script>
 
     <script type="module" src="./js/index.js"></script>
-    
-
+    <script type="module" src="./js/ChallangeSelector.js"></script>
 </body>
+
 </html>
