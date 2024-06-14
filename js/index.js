@@ -26,6 +26,7 @@ function createStyle(cssText) {
 function runCode() {
   let targetStyle = challenge.styles
   let playerStyle = cssCodeMirror.getValue()
+  playerStyle = styleStringToObject(playerStyle)
   console.log(playerStyle);
   compareStylesHandler(targetStyle ,playerStyle )
   console.log('i am here',challenge);
@@ -42,3 +43,22 @@ document.addEventListener('DOMContentLoaded', () => {
     challenge = feedChallange(1,localStorage.getItem('topic'))
   }, 0);
 });
+
+
+
+
+function styleStringToObject(styleString) {
+  const result = {};
+  const styleArray = styleString.split(';');
+
+  styleArray.forEach(style => {
+      const [key, value] = style.split(':');
+      if (key && value) {
+          const trimmedKey = key.trim();
+          const trimmedValue = value.trim();
+          result[trimmedKey] = trimmedValue;
+      }
+  });
+
+  return result;
+}

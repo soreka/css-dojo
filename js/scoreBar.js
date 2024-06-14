@@ -72,17 +72,11 @@ function compareStyles(targetStyles, playerStyles) {
 
 export function compareStylesHandler(targetStyles,playerStyles) {
 
-    // // take these from the challenges object
-    // const targetStylesInput = document.getElementById('targetStyles').value;
-    // // take that from the codeMirror editor 
-    // const playerStylesInput = document.getElementById('playerStyles').value;
-
     try {
         
         console.log('targetStyles',targetStyles);
         console.log('playerStyles',playerStyles);
-        // const targetStyles = JSON.parse(targetStylesInput);
-        // const playerStyles = JSON.parse(playerStylesInput);
+       
         const result = compareStyles(targetStyles, playerStyles);
 
         const resultsDiv = document.getElementById('results');
