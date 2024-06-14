@@ -1,5 +1,7 @@
 import { feedChallange } from "./challangeCreator.js"
-var cssCodeMirror = CodeMirror.fromTextArea(
+import {compareStylesHandler} from "./scoreBar.js"
+
+var cssCodeMirror = CodeMirror(
   document.getElementById("css-code-editor"),
   {
     value: "/*Write Your Styles Here #!#!*/\n",
@@ -22,6 +24,8 @@ function createStyle(cssText) {
 
 //// code for viewing the code live on the game screen
 function runCode() {
+  compareStylesHandler(`{game:1,player:2}` ,`{game:1,player:3}` )
+
   let styleCode = cssCodeMirror.getValue();
   createStyle(styleCode);
 }

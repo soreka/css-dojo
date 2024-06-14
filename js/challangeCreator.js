@@ -5,7 +5,6 @@ let basicStyles = ["width", "height", "background-color"];
 
 export function feedChallange(level = 1, type = 'shadows') {
   let challange = getChallange(type, level);
-  console.log(challanges.advanced[type]);
 
   // get the target elements
   let description = document.getElementById("level-description");
