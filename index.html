@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="codemirror-5.65.16/addon/hint/show-hint.css">
     <link rel="stylesheet" href="codemirror-5.65.16/lib/codemirror.css">
     <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/scoreBar.css">
+
     <link rel="stylesheet" href="./codemirror-5.65.16/theme/xq-light.css">
     <script src="https://kit.fontawesome.com/686463c8ce.js" crossorigin="anonymous"></script>
 
@@ -26,6 +28,14 @@
                 <h1 class="title">your styled Element</h1>
                 <div id="toShow">
                 </div>
+            </div>
+            <div id="results"></div>
+            <div class="score-container">
+                <h2>Your Current Score</h2>
+                <div class="progress-bar">
+                    <div class="progress" id="progress"></div>
+                </div>
+                <div class="message" id="message"></div>
             </div>
         </section>
         <section class="game-info"
@@ -56,7 +66,7 @@
             <ul class="label" id="css-tips"></ul>
             <div class="code-container">
                 <div id="css-container">
-                    <textarea id="css-code-editor"></textarea>
+                    <div id="css-code-editor"></div>
                 </div>
                 <button id="run-code" class="run-button">Run</button>
             </div>

@@ -1,0 +1,71 @@
+.score-container {
+    text-align: center;
+    background: #ffc4a5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #ffc4a5;
+    border-radius: 25px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 20px;
+    background-color: #00302e;
+    width: 0px;
+}
+
+.message {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.container {
+    width: 70%;
+    margin: auto;
+}
+
+.results {
+    margin-top: 20px;
+}
+
+.match {
+    color: green;
+}
+
+.difference {
+    color: red;
+}
+
+.score-container {
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 25px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 20px;
+    background-color: #76c7c0;
+    width: 0;
+}
+
+.message {
+    margin-top: 10px;
+    font-weight: bold;
+}

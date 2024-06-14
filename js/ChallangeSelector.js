@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
             levelButton.title = i;
             levelButton.textContent = i;
             levelButton.addEventListener("click", (e) => {
-                console.log("Level " + i + " clicked.");
                 feedChallange(e.target.title, 'shadows');
             });
             levelContainer.appendChild(levelButton);
