@@ -24,8 +24,11 @@ function createStyle(cssText) {
 
 //// code for viewing the code live on the game screen
 function runCode() {
-  compareStylesHandler(`{game:1,player:2}` ,`{game:1,player:3}` )
-
+  let targetStyle = challenge.styles
+  let playerStyle = cssCodeMirror.getValue()
+  console.log(playerStyle);
+  compareStylesHandler(targetStyle ,playerStyle )
+  console.log('i am here',challenge);
   let styleCode = cssCodeMirror.getValue();
   createStyle(styleCode);
 }
@@ -33,9 +36,9 @@ function runCode() {
 const myButton = document.getElementById("run-code");
 myButton.onclick = runCode;
 //////////////
-
+var challenge = null
 document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
-    feedChallange(1,localStorage.getItem('topic'))
+    challenge = feedChallange(1,localStorage.getItem('topic'))
   }, 0);
 });
