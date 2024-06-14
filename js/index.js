@@ -35,5 +35,7 @@ myButton.onclick = runCode;
 //////////////
 
 document.addEventListener('DOMContentLoaded', () => {
-  feedChallange()
+  setTimeout(() => {
+    feedChallange(1,localStorage.getItem('topic'))
+  }, 0);
 });
