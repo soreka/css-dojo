@@ -1,5 +1,6 @@
 import { feedChallange } from "./challangeCreator.js"
 import {compareStylesHandler} from "./scoreBar.js"
+import {addBasicStyles,cssObjToTxt} from "./challangeCreator.js"
 
 var challenge = null
 
@@ -9,13 +10,122 @@ var cssCodeMirror = CodeMirror(
     value: "/*Write Your Styles Here #!#!*/\n",
     mode: "css",
     autoCloseTags: true,
-    theme: "ttcn",
+    theme: "xq-light",
     lineNumbers: true,
     extraKeys: { "Ctrl-Space": "autocomplete" },
 
   }
 
 );
+function subtractObjects(obj1, obj2) {
+  const result = {};
+  for (const key in obj1) {
+    if (obj1.hasOwnProperty(key) && !obj2.hasOwnProperty(key)) {
+      result[key] = obj1[key];
+    }
+  }
+  return result;
+}
+
+function prepareStaticStyle (challange) {
+  let styleObj = {}
+  styleObj = addBasicStyles(styleObj)
+  console.log('styledObj',styleObj);
+  console.log('challenge styles',typeof cssObjToTxt(challange.styles));
+  styleObj = subtractObjects(styleObj,challange.styles)
+
+
+  let formattedString = '.yourStyle{\n';
+
+  for (let key in styleObj) {
+    if (styleObj.hasOwnProperty(key)) {
+      formattedString += `    ${key}: ${styleObj[key]};\n`;
+    }
+  }
+  for(let key in challange.styles ){
+    formattedString+= `\n`
+  }
+  // Remove the last comma and newline
+ 
+  formattedString += '\n}';
+
+  return formattedString;
+}
+
+
+function addMultiLineWidget(editor, fromLine, toLine) {
+  const startCh = 8;
+  const fromLineHandle = editor.getLineHandle(fromLine);
+  const toLineHandle = editor.getLineHandle(toLine);
+
+  const fromLineInfo = editor.lineInfo(fromLineHandle);
+  const toLineInfo = editor.lineInfo(toLineHandle);
+  var widgetNode = document.createElement("div");
+  widgetNode.contentEditable = true;
+  widgetNode.className = "editable-widget";
+  // widgetNode.innerText = 'Editable content here';
+
+  //to be revised
+  // const widgetNode = document.createElement("div");
+  // widgetNode.className = "multi-line-widget";
+
+  // Calculate the left offset based on the starting character
+  const chWidth = editor.defaultCharWidth();
+  const leftOffset = startCh * chWidth;
+
+  // Calculate the top and height of the widget based on the line heights
+  const lineHeight = editor.defaultTextHeight();
+  const topOffset = fromLineInfo.top;
+  const widgetHeight = (toLine - fromLine + 1) * lineHeight;
+
+  widgetNode.style.top = `${topOffset}px`;
+  widgetNode.style.height = `${widgetHeight}px`;
+  widgetNode.style.marginLeft = `${leftOffset}px`;
+
+  // creating the widget container which will contain the codemirror instance
+  var widgetContainer = document.createElement("div");
+  widgetContainer.className = "widget-container";
+
+  var widgetEditor = CodeMirror(widgetContainer, {
+    value: "content",
+    mode: "css",
+    theme: "lucario",
+    lineWrapping: true,
+    lineNumbers: false,
+    scrollbarStyle: null,
+    readOnly: false, // The widget itself should be editable
+    extraKeys: {
+      "Enter": function(cm) {
+          var lineCount = cm.lineCount();
+          var maxLines = 2; // Set your desired maximum number of lines
+          if (lineCount >= maxLines) {
+              return; // Prevent adding a new line
+          }
+          cm.execCommand('newlineAndIndent'); // Allow adding a new line if limit is not reached
+      }
+  }
+  });
+
+  widgetEditor.setSize(null, "100%");
+  widgetContainer.style.height = `${widgetHeight + 10}px`;
+  widgetNode.appendChild(widgetContainer);
+  // Add the widget node as a line widget to the first line, spanning the height of multiple lines
+  editor.addLineWidget(fromLineHandle, widgetNode, {
+    above: true,
+    coverGutter: false,
+    noHScroll: true,
+  });
+}
+
+
+
+
+
+
+
+
+
+
 
 //////////
 function createStyle(cssText) {
@@ -68,7 +178,7 @@ document.getElementById('rightArrow').addEventListener('click',changeHint)
 
 
 function changeHint (e) {
-  console.log(challenge);
+  console.log(JSON.stringify(challenge.styles,null,4));
   const hintRange = document.getElementById('hintTracker')
   let index = String(hintRange.textContent).split('-')[0]
   index = Number(index)
@@ -112,6 +222,8 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     challenge = feedChallange(1,localStorage.getItem('topic'))
     displayHint(challenge.hints,1)
+    let styleToAdd = prepareStaticStyle(challenge)
+    cssCodeMirror.setValue(styleToAdd)
   }, 0);
 });
 

@@ -20,7 +20,7 @@ export function feedChallange(level = 1, type = 'colors') {
   }
   // prepare the target element style 
   const styledDiv = document.getElementById("myDiv");
-  let styles = challange.styles;
+  let styles = {...challange.styles};
   styles = addBasicStyles(styles);
   styles = cssObjToTxt(styles);
   styledDiv.style = styles;
@@ -50,7 +50,7 @@ function getDeafultStyleValue(style) {
   }
 }
 
-function cssObjToTxt(styleObj) {
+export function cssObjToTxt(styleObj) {
   return Object.entries(styleObj)
     .map(([key, value]) => {
       const kebabKey = key.replace(/([A-Z])/g, "-$1").toLowerCase();
@@ -59,14 +59,14 @@ function cssObjToTxt(styleObj) {
     .join(" ");
 }
 
-function addBasicStyles(styleObj) {
-
+export function addBasicStyles(styleObj) {
+    let styledObj = {...styleObj}
   for (let style of basicStyles) {
-    if (!(style in styleObj)) {
-      styleObj[style] = getDeafultStyleValue(style);
+    if (!(style in styledObj)) {
+      styledObj[style] = getDeafultStyleValue(style);
     }
   }
-  return styleObj
+  return styledObj
 }
 
 //// get random challange from the challanges  object with the wanted level 
