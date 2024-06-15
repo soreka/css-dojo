@@ -34,6 +34,37 @@ function runCode() {
   createStyle(styleCode);
 }
 
+
+function toggleHintBar(e) {
+  var hiddenElement = document.getElementById('hintBar');
+  var iconElement = document.getElementById('hint-icon')
+  if (hiddenElement.classList.contains('hidden')) {
+      //hide
+      iconElement.classList.remove('hint-icon')
+      iconElement.classList.add('hidden')
+      //show
+      hiddenElement.classList.remove('hidden');
+      hiddenElement.classList.add('hint-bar-outer-container')
+  } else {
+      //hide
+      hiddenElement.classList.remove('hint-bar-outer-container')
+      hiddenElement.classList.add('hidden');
+      //show 
+      iconElement.classList.remove('hidden')
+      iconElement.classList.add('hint-icon')
+  }
+}
+
+document.getElementById('hint-icon').addEventListener('click',toggleHintBar);
+document.getElementById('drop-down-icon').addEventListener('click',toggleHintBar);
+
+
+
+
+
+
+
+
 const myButton = document.getElementById("run-code");
 myButton.onclick = runCode;
 //////////////
