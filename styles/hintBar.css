@@ -1,0 +1,170 @@
+.hint-bar-outer-container {
+    padding: 0.1%;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 90%;
+    border: 5px solid;
+    border-radius: 6.8%;
+    box-sizing: border-box;
+
+}
+
+.hint-bar-header {
+    position: relative; /* Required for positioning the pseudo-elements */
+    border-top: 5px solid #ffffff; /* White upper line */
+    border-radius: 20px 20px 0 0; /* Rounded top corners */
+    display: flex;
+    flex-wrap: nowrap;
+    height: 20%;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 3.5px solid;
+    background-color: hsl(177.5deg 40.68% 23.14%);
+    box-shadow: 
+        inset 0 1px 0 #1c3b3d, /* White line at the top */
+         0 4px 0 0 hsl(17.5deg 44.44% 78.82%),
+         inset 0 -10px 10px -10px #ffffff
+        ; 
+
+}
+
+
+.body-container {
+    padding: 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 80%;
+    outline: 5px black;
+    background-color: hsl(47.37deg 100% 96.27%);
+    border-bottom-left-radius: 6%;
+    border-bottom-right-radius: 6%;
+    box-shadow: 0 4px #e5c3b5;
+    box-sizing: border-box;
+}
+
+.hint-bar-title {
+    height: 33%;
+    width: 100%;
+    font-weight: 900;
+    text-align: center;
+    font-size: 2.5em;
+    font-stretch: extra-expanded;
+    font-family: cursive;
+    color: #00302e;
+}
+
+.hint-description {
+    height: 33%;
+    width: 100%;
+    text-align: center;
+    font-size: medium;
+    font-weight: bolder;
+    font-stretch: extra-expanded;
+    font-family: cursive;
+    color: hsl(13.95deg 29.25% 71.18%);
+}
+
+.hint-bar-button-container{
+    width: 100%;
+    height: 33%;
+    display: flex;
+    padding: 5px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: end;
+    box-sizing: border-box;
+}
+
+.hint-move-button{
+    font-size: medium; /* Adjust font size as needed */
+    padding: 4% 6%; /* Adjust padding as needed */
+    font-weight: bolder;
+    background: linear-gradient(to bottom, #00c853, #00bfa5); /* Gradient background */
+    font-family: cursive;
+    color: hsl(70deg 85.71% 97.25%);
+    border: 3.4px solid black; /* Darker border */
+    border-radius: 30px; /* Rounded corners */
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 
+        inset 0 3px 0 white, /* White line at the top */
+        inset 0 -5px 0 -2px #047c61,
+        0 3px 6px #00000061; /* Greenish shadow at the bottom */
+
+    transition: background 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+.hint-move-button:hover {
+    background: linear-gradient(to bottom, #00bfa5, #00c853); /* Hover effect */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.hint-move-button:active {
+    background: linear-gradient(to bottom, #00bfa5, #00c853); /* Active effect */
+    box-shadow: 
+        inset 0 3px 5px white, /* White line at the top when pressed */
+        0 5px 10px rgba(0, 128, 0, 0.5); /* Greenish shadow at the bottom */
+    transform: translateY(2px); /* Pressed down effect */
+}
+
+.svg-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 50%; /* Full viewport height */
+}
+
+.drop-down-icon {
+    background-color: hsl(31.58deg 100% 96.27%);
+    fill: hsl(154.77deg 97.99% 39.02%); /* Change the color of the SVG */
+    border: 3px solid hsl(189.73deg 67.27% 10.78%);
+}
+
+.drop-down-icon:hover {
+    transform: translateY(-3%); /* Move the icon up by 5px */
+}
+
+.lamp-icon {
+    fill: hsl(154.77deg 97.99% 39.02%); /* Change the color of the SVG */
+    background-color: hsl(165.88deg 95.51% 17.45%);
+}
+
+.svg-icon {
+    border-radius: 50px;
+    width: 30px; /* Set the width of the SVG */
+    height: 30px; /* Set the height of the SVG */
+}
+
+.hint-tracker {
+    font-weight: bolder;
+    background-color: hsl(31.58deg 100% 96.27%);
+    color: hsl(154.77deg 97.99% 39.02%);
+    border: 3px solid hsl(189.73deg 67.27% 10.78%);
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 0.9em;
+}
+
+.hint-icon {
+    width: 27%;
+    object-fit: contain;
+    margin-right: 8px;
+    
+}
+.hint-icon:hover {
+   
+    transform: translateY(-5px); /* Move the icon up by 5px */
+    
+}
+
+.hint-button {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    cursor: pointer;
+    max-width: 200px; /* Set a max-width for the button */
+}
