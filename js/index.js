@@ -1,8 +1,11 @@
 import { feedChallange } from "./challangeCreator.js"
 import {compareStylesHandler} from "./scoreBar.js"
+import {buildLevelsModal} from "./ChallangeSelector.js"
+import challenges from './challanges.js'
+
 
 var challenge = null
-
+var difficulty
 var cssCodeMirror = CodeMirror(
   document.getElementById("css-code-editor"),
   {
@@ -29,9 +32,7 @@ function runCode() {
   let targetStyle = challenge.styles
   let playerStyle = cssCodeMirror.getValue()
   playerStyle = styleStringToObject(playerStyle)
-  console.log(playerStyle);
   compareStylesHandler(targetStyle ,playerStyle )
-  console.log('i am here',challenge);
   let styleCode = cssCodeMirror.getValue();
   createStyle(styleCode);
 }
@@ -68,7 +69,6 @@ document.getElementById('rightArrow').addEventListener('click',changeHint)
 
 
 function changeHint (e) {
-  console.log(challenge);
   const hintRange = document.getElementById('hintTracker')
   let index = String(hintRange.textContent).split('-')[0]
   index = Number(index)
@@ -110,10 +110,26 @@ myButton.onclick = runCode;
 // var challenge = null
 document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
-    challenge = feedChallange(1,localStorage.getItem('topic'))
+    let topic = localStorage.getItem('topic')
+    difficulty =  getDifficulty(topic)
+    challenge = feedChallange(1,topic,difficulty)
+    buildLevelsModal(topic,difficulty)
     displayHint(challenge.hints,1)
+
+
   }, 0);
 });
+
+
+function getDifficulty (topic) {
+  let difficulties = Object.keys(challenges)
+  for(let diff of difficulties){
+    if(Object.keys(challenges[diff]).includes(topic)){
+      return diff
+    }
+  }
+}
+
 
 
 

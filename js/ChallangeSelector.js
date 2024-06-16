@@ -1,7 +1,8 @@
 import { feedChallange } from "./challangeCreator.js";
 import challenges from "./challanges.js";
 
-document.addEventListener("DOMContentLoaded", function () {
+
+export function buildLevelsModal (topic,difficulty) {
     const levelButtons = document.querySelectorAll(".level-button");
     const modal = document.getElementById("modal");
     const closeButton = document.querySelector(".close");
@@ -39,10 +40,10 @@ document.addEventListener("DOMContentLoaded", function () {
             levelButton.title = i;
             levelButton.textContent = i;
             levelButton.addEventListener("click", (e) => {
-                feedChallange(e.target.title, 'shadows');
+                feedChallange(e.target.title, topic,difficulty);
             });
             levelContainer.appendChild(levelButton);
         }
     }
 
-});
+}
