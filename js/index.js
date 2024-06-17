@@ -4,9 +4,10 @@ import {addBasicStyles,cssObjToTxt} from "./challangeCreator.js"
 import {buildLevelsModal} from "./ChallangeSelector.js"
 import challenges from './challanges.js'
 
-
+var maxLines = 0 
 var challenge = null
-var difficulty
+var difficulty = null
+var widgetEditor;
 var cssCodeMirror = CodeMirror(
   document.getElementById("css-code-editor"),
   {
@@ -14,12 +15,12 @@ var cssCodeMirror = CodeMirror(
     mode: "css",
     autoCloseTags: true,
     theme: "xq-light",
+    readOnly: "nocursor",
     lineNumbers: true,
-    extraKeys: { "Ctrl-Space": "autocomplete" },
-
   }
 
 );
+
 function subtractObjects(obj1, obj2) {
   const result = {};
   for (const key in obj1) {
@@ -31,10 +32,10 @@ function subtractObjects(obj1, obj2) {
 }
 
 function prepareStaticStyle (challange) {
+  let fromLine = 0
+  let toLine = 0
   let styleObj = {}
   styleObj = addBasicStyles(styleObj)
-  console.log('styledObj',styleObj);
-  console.log('challenge styles',typeof cssObjToTxt(challange.styles));
   styleObj = subtractObjects(styleObj,challange.styles)
 
 
@@ -42,22 +43,24 @@ function prepareStaticStyle (challange) {
 
   for (let key in styleObj) {
     if (styleObj.hasOwnProperty(key)) {
-      formattedString += `    ${key}: ${styleObj[key]};\n`;
+      formattedString += `       ${key}: ${styleObj[key]};\n`;
+      fromLine += 1 
     }
   }
+  toLine = fromLine
   for(let key in challange.styles ){
-    formattedString+= `\n`
+    formattedString += `\n`
+    toLine += 1 
   }
-  // Remove the last comma and newline
- 
+  fromLine += 1
+  let linesObj = {fromLine:fromLine,toLine:toLine}
   formattedString += '\n}';
-
-  return formattedString;
+  return {format:formattedString,linesObj:linesObj};
 }
 
 
 function addMultiLineWidget(editor, fromLine, toLine) {
-  const startCh = 8;
+  const startCh = 7;
   const fromLineHandle = editor.getLineHandle(fromLine);
   const toLineHandle = editor.getLineHandle(toLine);
 
@@ -88,8 +91,7 @@ function addMultiLineWidget(editor, fromLine, toLine) {
   // creating the widget container which will contain the codemirror instance
   var widgetContainer = document.createElement("div");
   widgetContainer.className = "widget-container";
-
-  var widgetEditor = CodeMirror(widgetContainer, {
+  widgetEditor = CodeMirror(widgetContainer, {
     value: "content",
     mode: "css",
     theme: "lucario",
@@ -100,7 +102,7 @@ function addMultiLineWidget(editor, fromLine, toLine) {
     extraKeys: {
       "Enter": function(cm) {
           var lineCount = cm.lineCount();
-          var maxLines = 2; // Set your desired maximum number of lines
+           // Set your desired maximum number of lines
           if (lineCount >= maxLines) {
               return; // Prevent adding a new line
           }
@@ -122,14 +124,6 @@ function addMultiLineWidget(editor, fromLine, toLine) {
 
 
 
-
-
-
-
-
-
-
-
 //////////
 function createStyle(cssText) {
   const viewElement = document.getElementById('toShow')
@@ -140,7 +134,7 @@ function createStyle(cssText) {
 //// code for viewing the code live on the game screen
 function runCode() {
   let targetStyle = challenge.styles
-  let playerStyle = cssCodeMirror.getValue()
+  let playerStyle = widgetEditor.getValue()
   playerStyle = styleStringToObject(playerStyle)
   compareStylesHandler(targetStyle ,playerStyle )
   let styleCode = cssCodeMirror.getValue();
@@ -179,7 +173,6 @@ document.getElementById('rightArrow').addEventListener('click',changeHint)
 
 
 function changeHint (e) {
-  console.log(JSON.stringify(challenge.styles,null,4));
   const hintRange = document.getElementById('hintTracker')
   let index = String(hintRange.textContent).split('-')[0]
   index = Number(index)
@@ -226,9 +219,10 @@ document.addEventListener('DOMContentLoaded', () => {
     challenge = feedChallange(1,topic,difficulty)
     buildLevelsModal(topic,difficulty)
     displayHint(challenge.hints,1)
-    let styleToAdd = prepareStaticStyle(challenge)
-    cssCodeMirror.setValue(styleToAdd)
-
+    const { format , linesObj:{fromLine,toLine} } = prepareStaticStyle(challenge)
+    cssCodeMirror.setValue(format)
+    maxLines = Object.keys(challenge.styles).length
+    addMultiLineWidget(cssCodeMirror,fromLine,toLine)
 
   }, 0);
 });

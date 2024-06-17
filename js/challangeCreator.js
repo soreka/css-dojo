@@ -72,7 +72,6 @@ export function addBasicStyles(styleObj) {
 //// get random challange from the challanges  object with the wanted level 
 
 function getChallange(type = "colors", level,difficulty) {
-  console.log(type);
   let targetLevels = challanges[difficulty][type].filter((challange) => challange.level == level);  
   let randIndex = getRandomInt(0, targetLevels.length - 1);
   return targetLevels[randIndex];
