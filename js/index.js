@@ -35,8 +35,10 @@ function prepareStaticStyle (challange) {
   let fromLine = 0
   let toLine = 0
   let styleObj = {}
+  let convertedTypeStyles = {...challange.styles} ;
+  convertedTypeStyles = styleStringToObject(cssObjToTxt(convertedTypeStyles))
   styleObj = addBasicStyles(styleObj)
-  styleObj = subtractObjects(styleObj,challange.styles)
+  styleObj = subtractObjects(styleObj,convertedTypeStyles)
 
 
   let formattedString = '.yourStyle{\n';
@@ -125,20 +127,24 @@ function addMultiLineWidget(editor, fromLine, toLine) {
 
 
 //////////
-function createStyle(cssText) {
+function createStyle(cssObj) {
   const viewElement = document.getElementById('toShow')
-  viewElement.style = cssText;
+  Object.assign(viewElement.style,cssObj) 
 }
 
 
 //// code for viewing the code live on the game screen
 function runCode() {
   let targetStyle = challenge.styles
+  targetStyle = styleStringToObject(cssObjToTxt(targetStyle))
   let playerStyle = widgetEditor.getValue()
   playerStyle = styleStringToObject(playerStyle)
   compareStylesHandler(targetStyle ,playerStyle )
-  let styleCode = cssCodeMirror.getValue();
-  createStyle(styleCode);
+  let styleObj = addBasicStyles(playerStyle)
+  styleObj = subtractObjects(styleObj,targetStyle)
+  let playerEndStyle = {...styleObj,...playerStyle}
+  console.log('player finalStyle',playerEndStyle);
+  createStyle(playerEndStyle);
 }
 
 
