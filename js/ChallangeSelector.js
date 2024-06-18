@@ -1,6 +1,6 @@
 import { feedChallange } from "./challangeCreator.js";
 import challenges from "./challanges.js";
-
+import { state } from "./index.js";
 
 export function buildLevelsModal (topic,difficulty) {
     const levelButtons = document.querySelectorAll(".level-button");
@@ -40,7 +40,8 @@ export function buildLevelsModal (topic,difficulty) {
             levelButton.title = i;
             levelButton.textContent = i;
             levelButton.addEventListener("click", (e) => {
-                feedChallange(e.target.title, topic,difficulty);
+                const challenge = feedChallange(e.target.title, topic,difficulty);
+                state.setState({...state.getState(),challenge})
             });
             levelContainer.appendChild(levelButton);
         }

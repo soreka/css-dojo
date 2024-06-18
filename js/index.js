@@ -3,6 +3,16 @@ import {compareStylesHandler} from "./scoreBar.js"
 import {addBasicStyles,cssObjToTxt} from "./challangeCreator.js"
 import {buildLevelsModal} from "./ChallangeSelector.js"
 import challenges from './challanges.js'
+import { createState } from "./stateManager/stateManager.js"
+
+const initialState = {
+  topic:null,
+  difficulty:null,
+  challenge:null,
+  maxLines:0
+}
+
+export const state = createState(initialState)
 
 var maxLines = 0 
 var challenge = null
@@ -106,7 +116,7 @@ function addMultiLineWidget(editor, fromLine, toLine) {
       "Enter": function(cm) {
           var lineCount = cm.lineCount();
            // Set your desired maximum number of lines
-          if (lineCount >= maxLines) {
+          if (lineCount >= state.getState().maxLines) {
               return; // Prevent adding a new line
           }
           cm.execCommand('newlineAndIndent'); // Allow adding a new line if limit is not reached
@@ -144,6 +154,7 @@ function createStyle(cssObj) {
 
 //// code for viewing the code live on the game screen
 function runCode() {
+  let challenge = state.getState().challenge
   let targetStyle = challenge.styles
   targetStyle = styleStringToObject(cssObjToTxt(targetStyle))
   let playerStyle = widgetEditor.getValue()
@@ -227,20 +238,36 @@ const myButton = document.getElementById("run-code");
 myButton.onclick = runCode;
 //////////////
 // var challenge = null
+function render (state) {
+  const challenge = state.challenge
+  displayHint(challenge.hints,1)
+  const { format , linesObj:{fromLine,toLine} } = prepareStaticStyle(challenge)
+  cssCodeMirror.setValue(format)
+  addMultiLineWidget(cssCodeMirror,fromLine,toLine)
+
+}
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
+
     let topic = localStorage.getItem('topic')
     difficulty =  getDifficulty(topic)
     challenge = feedChallange(1,topic,difficulty)
     buildLevelsModal(topic,difficulty)
-    displayHint(challenge.hints,1)
-    const { format , linesObj:{fromLine,toLine} } = prepareStaticStyle(challenge)
-    cssCodeMirror.setValue(format)
     maxLines = Object.keys(challenge.styles).length
-    addMultiLineWidget(cssCodeMirror,fromLine,toLine)
+    state.setState({topic,difficulty,challenge,maxLines})
 
   }, 0);
 });
+// Subscribe to state changes for debugging (optional)
+state.subscribe(newState => {
+  console.log('State updated:', newState);
+});
+
+state.subscribe(render)
 
 
 function getDifficulty (topic) {
