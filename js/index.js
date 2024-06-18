@@ -102,6 +102,7 @@ function addMultiLineWidget(editor, fromLine, toLine) {
     scrollbarStyle: null,
     readOnly: false, // The widget itself should be editable
     extraKeys: {
+      "Ctrl-Space": "autocomplete",
       "Enter": function(cm) {
           var lineCount = cm.lineCount();
            // Set your desired maximum number of lines
@@ -110,8 +111,16 @@ function addMultiLineWidget(editor, fromLine, toLine) {
           }
           cm.execCommand('newlineAndIndent'); // Allow adding a new line if limit is not reached
       }
-  }
+      },
+    hintOptions: {completeSingle: false},
+
   });
+  widgetEditor.on("inputRead", function(cm, event) {
+    if (!cm.state.completionActive && event.text.length > 0) { // Perform autocomplete only when not already active and text input is not empty
+        CodeMirror.showHint(cm, CodeMirror.hint.css, {completeSingle: false});
+    }
+  });
+
 
   widgetEditor.setSize(null, "100%");
   widgetContainer.style.height = `${widgetHeight + 10}px`;
@@ -262,6 +271,29 @@ function styleStringToObject(styleString) {
 
   return result;
 }
+
+
+
+
+function customCSSHint(cm, options) {
+  var cursor = cm.getCursor();
+  var token = cm.getTokenAt(cursor);
+  var start = token.start, end = token.end;
+
+  // Call the built-in CSS hint function
+  var inner = CodeMirror.hint.css(cm, options);
+
+  // Adjust hint positions to ensure proper suggestions
+  if (inner && inner.list && inner.list.length > 0) {
+      return {
+          list: inner.list,
+          from: CodeMirror.Pos(cursor.line, start),
+          to: CodeMirror.Pos(cursor.line, end)
+      };
+  }
+  return inner;
+}
+
 
 
 

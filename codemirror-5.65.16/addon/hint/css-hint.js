@@ -43,13 +43,14 @@
         if (!word || name.lastIndexOf(word, 0) == 0)
           result.push(name);
     }
-
+    console.log(inner.state.state);
     var st = inner.state.state;
-    if (st == "pseudo" || token.type == "variable-3") {
-      add(pseudoClasses);
-    } else if (st == "block" || st == "maybeprop") {
+    // if (st == "pseudo" || token.type == "variable-3") {
+    //   add(pseudoClasses);
+    // } else
+     if (st == "block" || st == "maybeprop" || st == "top") {
       add(spec.propertyKeywords);
-    } else if (st == "prop" || st == "parens" || st == "at" || st == "params") {
+    } else if (st == "pseudo" || st == "prop" || st == "parens" || st == "at" || st == "params") {
       add(spec.valueKeywords);
       add(spec.colorKeywords);
     } else if (st == "media" || st == "media_parens") {
