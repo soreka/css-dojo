@@ -1,40 +1,159 @@
 import { feedChallange } from "./challangeCreator.js"
 import {compareStylesHandler} from "./scoreBar.js"
+import {addBasicStyles,cssObjToTxt} from "./challangeCreator.js"
 import {buildLevelsModal} from "./ChallangeSelector.js"
 import challenges from './challanges.js'
 
-
+var maxLines = 0 
 var challenge = null
-var difficulty
+var difficulty = null
+var widgetEditor;
 var cssCodeMirror = CodeMirror(
   document.getElementById("css-code-editor"),
   {
     value: "/*Write Your Styles Here #!#!*/\n",
     mode: "css",
     autoCloseTags: true,
-    theme: "ttcn",
+    theme: "xq-light",
+    readOnly: "nocursor",
     lineNumbers: true,
-    extraKeys: { "Ctrl-Space": "autocomplete" },
-
   }
 
 );
 
+function subtractObjects(obj1, obj2) {
+  const result = {};
+  for (const key in obj1) {
+    if (obj1.hasOwnProperty(key) && !obj2.hasOwnProperty(key)) {
+      result[key] = obj1[key];
+    }
+  }
+  return result;
+}
+
+function prepareStaticStyle (challange) {
+  let fromLine = 0
+  let toLine = 0
+  let styleObj = {}
+  let convertedTypeStyles = {...challange.styles} ;
+  convertedTypeStyles = styleStringToObject(cssObjToTxt(convertedTypeStyles))
+  styleObj = addBasicStyles(styleObj)
+  styleObj = subtractObjects(styleObj,convertedTypeStyles)
+
+
+  let formattedString = '.yourStyle{\n';
+
+  for (let key in styleObj) {
+    if (styleObj.hasOwnProperty(key)) {
+      formattedString += `       ${key}: ${styleObj[key]};\n`;
+      fromLine += 1 
+    }
+  }
+  toLine = fromLine
+  for(let key in challange.styles ){
+    formattedString += `\n`
+    toLine += 1 
+  }
+  fromLine += 1
+  let linesObj = {fromLine:fromLine,toLine:toLine}
+  formattedString += '\n}';
+  return {format:formattedString,linesObj:linesObj};
+}
+
+
+function addMultiLineWidget(editor, fromLine, toLine) {
+  const startCh = 7;
+  const fromLineHandle = editor.getLineHandle(fromLine);
+  const toLineHandle = editor.getLineHandle(toLine);
+
+  const fromLineInfo = editor.lineInfo(fromLineHandle);
+  const toLineInfo = editor.lineInfo(toLineHandle);
+  var widgetNode = document.createElement("div");
+  widgetNode.contentEditable = true;
+  widgetNode.className = "editable-widget";
+  // widgetNode.innerText = 'Editable content here';
+
+  //to be revised
+  // const widgetNode = document.createElement("div");
+  // widgetNode.className = "multi-line-widget";
+
+  // Calculate the left offset based on the starting character
+  const chWidth = editor.defaultCharWidth();
+  const leftOffset = startCh * chWidth;
+
+  // Calculate the top and height of the widget based on the line heights
+  const lineHeight = editor.defaultTextHeight();
+  const topOffset = fromLineInfo.top;
+  const widgetHeight = (toLine - fromLine + 1) * lineHeight;
+
+  widgetNode.style.top = `${topOffset}px`;
+  widgetNode.style.height = `${widgetHeight}px`;
+  widgetNode.style.marginLeft = `${leftOffset}px`;
+
+  // creating the widget container which will contain the codemirror instance
+  var widgetContainer = document.createElement("div");
+  widgetContainer.className = "widget-container";
+  widgetEditor = CodeMirror(widgetContainer, {
+    value: "content",
+    mode: "css",
+    theme: "lucario",
+    lineWrapping: true,
+    lineNumbers: false,
+    scrollbarStyle: null,
+    readOnly: false, // The widget itself should be editable
+    extraKeys: {
+      "Ctrl-Space": "autocomplete",
+      "Enter": function(cm) {
+          var lineCount = cm.lineCount();
+           // Set your desired maximum number of lines
+          if (lineCount >= maxLines) {
+              return; // Prevent adding a new line
+          }
+          cm.execCommand('newlineAndIndent'); // Allow adding a new line if limit is not reached
+      }
+      },
+    hintOptions: {completeSingle: false},
+
+  });
+  widgetEditor.on("inputRead", function(cm, event) {
+    if (!cm.state.completionActive && event.text.length > 0) { // Perform autocomplete only when not already active and text input is not empty
+        CodeMirror.showHint(cm, CodeMirror.hint.css, {completeSingle: false});
+    }
+  });
+
+
+  widgetEditor.setSize(null, "100%");
+  widgetContainer.style.height = `${widgetHeight + 10}px`;
+  widgetNode.appendChild(widgetContainer);
+  // Add the widget node as a line widget to the first line, spanning the height of multiple lines
+  editor.addLineWidget(fromLineHandle, widgetNode, {
+    above: true,
+    coverGutter: false,
+    noHScroll: true,
+  });
+}
+
+
+
 //////////
-function createStyle(cssText) {
+function createStyle(cssObj) {
   const viewElement = document.getElementById('toShow')
-  viewElement.style = cssText;
+  Object.assign(viewElement.style,cssObj) 
 }
 
 
 //// code for viewing the code live on the game screen
 function runCode() {
   let targetStyle = challenge.styles
-  let playerStyle = cssCodeMirror.getValue()
+  targetStyle = styleStringToObject(cssObjToTxt(targetStyle))
+  let playerStyle = widgetEditor.getValue()
   playerStyle = styleStringToObject(playerStyle)
   compareStylesHandler(targetStyle ,playerStyle )
-  let styleCode = cssCodeMirror.getValue();
-  createStyle(styleCode);
+  let styleObj = addBasicStyles(playerStyle)
+  styleObj = subtractObjects(styleObj,targetStyle)
+  let playerEndStyle = {...styleObj,...playerStyle}
+  console.log('player finalStyle',playerEndStyle);
+  createStyle(playerEndStyle);
 }
 
 
@@ -115,7 +234,10 @@ document.addEventListener('DOMContentLoaded', () => {
     challenge = feedChallange(1,topic,difficulty)
     buildLevelsModal(topic,difficulty)
     displayHint(challenge.hints,1)
-
+    const { format , linesObj:{fromLine,toLine} } = prepareStaticStyle(challenge)
+    cssCodeMirror.setValue(format)
+    maxLines = Object.keys(challenge.styles).length
+    addMultiLineWidget(cssCodeMirror,fromLine,toLine)
 
   }, 0);
 });
@@ -149,6 +271,29 @@ function styleStringToObject(styleString) {
 
   return result;
 }
+
+
+
+
+function customCSSHint(cm, options) {
+  var cursor = cm.getCursor();
+  var token = cm.getTokenAt(cursor);
+  var start = token.start, end = token.end;
+
+  // Call the built-in CSS hint function
+  var inner = CodeMirror.hint.css(cm, options);
+
+  // Adjust hint positions to ensure proper suggestions
+  if (inner && inner.list && inner.list.length > 0) {
+      return {
+          list: inner.list,
+          from: CodeMirror.Pos(cursor.line, start),
+          to: CodeMirror.Pos(cursor.line, end)
+      };
+  }
+  return inner;
+}
+
 
 
 
