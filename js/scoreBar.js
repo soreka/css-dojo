@@ -73,10 +73,6 @@ function compareStyles(targetStyles, playerStyles) {
 export function compareStylesHandler(targetStyles,playerStyles) {
 
     try {
-        
-        console.log('targetStyles',targetStyles);
-        console.log('playerStyles',playerStyles);
-       
         const result = compareStyles(targetStyles, playerStyles);
 
         const resultsDiv = document.getElementById('results');

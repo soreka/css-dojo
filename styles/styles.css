@@ -277,7 +277,4 @@ html,body{
     user-select: none;
     /* Ensure the line is relatively positioned to allow absolute positioning inside it */
 }
-
-
-
 /* CodeMirror styles */
