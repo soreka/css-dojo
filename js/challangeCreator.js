@@ -1,5 +1,5 @@
 import challanges from "./challanges.js";
-
+import { state } from "./index.js";
 let basicStyles = ["width", "height", "background-color"];
 
 
@@ -25,13 +25,10 @@ export function feedChallange(level = 1, type = 'colors',difficulty='beginner') 
   styles = cssObjToTxt(styles);
   styledDiv.style = styles;
   return challange
-  //// This is for a case that we get the styles as text and not as object
-  //   let solutionStyles = challange.solution
-  //     .split(";")
-  //     .filter((e) => e != "")
-  //     .map((e) => e.split(":"))
-  //     .map((e) => e[0]);
+  
 }
+
+
 
 
 function getDeafultStyleValue(style) {

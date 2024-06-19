@@ -42,6 +42,7 @@ export function buildLevelsModal (topic,difficulty) {
             levelButton.addEventListener("click", (e) => {
                 const challenge = feedChallange(e.target.title, topic,difficulty);
                 state.setState({...state.getState(),challenge})
+                
             });
             levelContainer.appendChild(levelButton);
         }

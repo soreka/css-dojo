@@ -240,6 +240,17 @@ myButton.onclick = runCode;
 // var challenge = null
 function render (state) {
   const challenge = state.challenge
+  //clean Score bar
+  const progressElement = document.getElementById("progress");
+  const messageElement = document.getElementById("message");
+  const resultsDiv = document.getElementById('results');
+  resultsDiv.innerHTML = ''
+  progressElement.style.width = `${0}%`;
+  messageElement.textContent = ''
+  //clean player Styled Element 
+  const playerStyledElement = document.getElementById('toShow')
+  playerStyledElement.style = ''
+  
   displayHint(challenge.hints,1)
   const { format , linesObj:{fromLine,toLine} } = prepareStaticStyle(challenge)
   cssCodeMirror.setValue(format)
