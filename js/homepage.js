@@ -55,7 +55,7 @@ function challengesComponent(arrOfTopics, container) {
   for (let i = 0; i < arrOfTopics.length; i++) {
     const divContainer = document.createElement("div");
     const linker = document.createElement("a");
-    linker.href = "./index.html";
+    linker.href = "./game.html";
     linker.style.textDecoration = "none";
     divContainer.className = "div-container";
     const title = document.createElement("div");
