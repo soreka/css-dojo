@@ -278,3 +278,10 @@ html,body{
     /* Ensure the line is relatively positioned to allow absolute positioning inside it */
 }
 /* CodeMirror styles */
+.CodeMirror-activeline-background {
+    background-color: #e8f2ff;
+}
+.cm-matchhighlight {
+    background-color: hsl(47.37deg 100% 96.27%);
+}
+/* CodeMirror styles */

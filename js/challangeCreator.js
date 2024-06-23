@@ -1,5 +1,5 @@
 import challanges from "./challanges.js";
-import { state } from "./index.js";
+import { styleStringToObject } from "./index.js";
 let basicStyles = ["width", "height", "background-color"];
 
 
@@ -20,7 +20,7 @@ export function feedChallange(level = 1, type = 'colors',difficulty='beginner') 
   }
   // prepare the target element style 
   const styledDiv = document.getElementById("myDiv");
-  let styles = {...challange.styles};
+  let styles = styleStringToObject(cssObjToTxt(challange.styles))
   styles = addBasicStyles(styles);
   styles = cssObjToTxt(styles);
   styledDiv.style = styles;

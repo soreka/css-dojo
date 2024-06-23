@@ -99,7 +99,7 @@ function addMultiLineWidget(editor, fromLine, toLine) {
   widgetNode.style.top = `${topOffset}px`;
   widgetNode.style.height = `${widgetHeight}px`;
   widgetNode.style.marginLeft = `${leftOffset}px`;
-
+  let maxLines = state.getState().maxLines
   // creating the widget container which will contain the codemirror instance
   var widgetContainer = document.createElement("div");
   widgetContainer.className = "widget-container";
@@ -109,6 +109,8 @@ function addMultiLineWidget(editor, fromLine, toLine) {
     theme: "lucario",
     lineWrapping: true,
     lineNumbers: false,
+    styleActiveLine: true,
+    highlightSelectionMatches: {showToken: /\w/},
     scrollbarStyle: null,
     readOnly: false, // The widget itself should be editable
     extraKeys: {
@@ -116,7 +118,7 @@ function addMultiLineWidget(editor, fromLine, toLine) {
       "Enter": function(cm) {
           var lineCount = cm.lineCount();
            // Set your desired maximum number of lines
-          if (lineCount >= state.getState().maxLines) {
+          if (lineCount >= maxLines) {
               return; // Prevent adding a new line
           }
           cm.execCommand('newlineAndIndent'); // Allow adding a new line if limit is not reached
@@ -163,7 +165,6 @@ function runCode() {
   let styleObj = addBasicStyles(playerStyle)
   styleObj = subtractObjects(styleObj,targetStyle)
   let playerEndStyle = {...styleObj,...playerStyle}
-  console.log('player finalStyle',playerEndStyle);
   createStyle(playerEndStyle);
 }
 
@@ -294,7 +295,7 @@ function getDifficulty (topic) {
 
 
 
-function styleStringToObject(styleString) {
+export function styleStringToObject(styleString) {
   const result = {};
   const styleArray = styleString.split(';');
 
