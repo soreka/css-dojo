@@ -24,17 +24,21 @@
     <div class="outer-container">
         <button id="startTour">Start Tour</button>
         <section class="game-screen">
-            <h1 class="title">your target Element</h1>
-            <div>
-                <div id="myDiv">This is the target element</div>
+            <div class="target-element tour-step" data-step="4">
+                <h1 class="title">your target Element</h1>
+                <div>
+                    <div id="myDiv">This is the target element</div>
+                </div>
             </div>
-            <h1 class="title">your styled Element</h1>
-            <div class="target">
-                <div id="toShow">
-            </div>
+            <div class="styled-element tour-step" data-step="7">
+                <h1 class="title ">your styled Element</h1>
+                <div class="target">
+                    <div id="toShow">
+                    </div>
+                </div>
             </div>
             <div id="results"></div>
-            <div class="score-container">
+            <div class="score-container tour-step" data-step="8">
                 <h2>Your Current Score</h2>
                 <div class="progress-bar">
                     <div class="progress" id="progress"></div>
