@@ -48,6 +48,7 @@ html,body{
     font-size:40px;
     color: #000000;
 }
+/*styles for the guide tour*/
 .target-element,
 .styled-element {
     display: flex;
@@ -97,6 +98,8 @@ html,body{
     z-index: 1002;
     /* Ensure it's above other elements */
 }
+/*end of styles for the guide tour */
+
 .main{font-size: xx-la;
     color: #f8f8f8;
     margin-top: 70px;
