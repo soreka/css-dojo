@@ -48,6 +48,55 @@ html,body{
     font-size:40px;
     color: #000000;
 }
+.target-element,
+.styled-element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 10px;
+}
+
+/* Inline CSS for the tour guide */
+.blurred {
+    filter: blur(5px);
+    pointer-events: none;
+    opacity: 0.5;
+    
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 2000;
+    /* Ensure tooltip is above other elements */
+}
+
+.highlight {
+    border: 2px solid red;
+    /* Red border */
+    position: relative;
+    z-index: 1000;
+    /* Ensure it's below tooltip */
+    filter: none;
+    /* Remove blur */
+    pointer-events: auto;
+    /* Ensure it's clickable */
+}
+
+
+#startTour {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1002;
+    /* Ensure it's above other elements */
+}
 .main{font-size: xx-la;
     color: #f8f8f8;
     margin-top: 70px;
@@ -286,51 +335,3 @@ html,body{
     background-color: hsl(47.37deg 100% 96.27%);
 }
 /* CodeMirror styles */
-
-/*guide styles*/
-
-/* Target Element and Styled Element Styles */
-.target-element,
-.styled-element {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding-bottom: 10px;
-}
-
-/* Inline CSS for the Tour Guide */
-.blurred {
-    filter: blur(5px);
-    pointer-events: none;
-    opacity: 0.5;
-}
-
-/* Tooltip Styling */
-.tooltip {
-    display: none;
-    position: absolute;
-    background-color: white;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 2000;
-}
-
-/* Highlight Style */
-.highlight {
-    border: 2px solid red;
-    position: relative;
-    z-index: 1000;
-    filter: none;
-    pointer-events: auto;
-}
-
-/* Start Tour Button Style */
-#startTour {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 1002;
-}
