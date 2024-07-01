@@ -1,104 +1,73 @@
 // JavaScript for Tour Guide
 
+const steps = [
+    { id: "level-description", text: "Welcome to the challenge! This is the task you need to complete." },
+    { id: "level-selection", text: "Check out the current levels and navigate to others to progress." },
+    { id: "hint-icon", text: "Use the hint label if you get stuck on any level." },
+    { id: "target-element", text: "This is the target element you need to create." },
+    { id: "css-container", text: "In the code editor (Code Mirror), write 'background-color' to assist you." },
+    { id: "run-code", text: "Click the 'Run' button to see if you've achieved your target." },
+    { id: "styled-element", text: "Here is the styled element you've crafted!" },
+    { id: "score-tracker", text: "Keep an eye on your score to track your progress." }
+];
+
+let currentStepIndex = 0;
+const tooltip = document.getElementById('tourTooltip');
+const tooltipText = document.getElementById('tooltipText');
 function initializeTour() {
-    document.getElementById('startTour').onclick = function () {
-        startTour();
-    };
+    document.getElementById('startTour').onclick = startTour;
+    document.getElementById('nextStep').onclick = nextStep;
+    document.getElementById('prevStep').onclick = prevStep;
+    document.getElementById('skipTour').onclick = endTour;
+}
 
-    document.getElementById('nextStep').onclick = function () {
-        nextStep();
-    };
+function startTour() {
+    currentStepIndex = 0; 
+    showStep();
+}
 
-    document.getElementById('prevStep').onclick = function () {
-        prevStep();
-    };
-
-    document.getElementById('skipTour').onclick = function () {
+function nextStep() {
+    if (currentStepIndex < steps.length - 1) {
+        hideStep(currentStepIndex); 
+        currentStepIndex++;
+        showStep();
+    } else {
         endTour();
-    };
+    }
+}
 
-    let currentStep = 0;
-    let steps = Array.from(document.querySelectorAll('.tour-step'));
-    const tooltip = document.getElementById('tourTooltip');
-    const tooltipText = document.getElementById('tooltipText');
-
-    // Sort steps based on data-step attribute
-    steps.sort((a, b) => {
-        return parseInt(a.getAttribute('data-step')) - parseInt(b.getAttribute('data-step'));
-    });
-
-    function startTour() {
-        currentStep = 0; // Start from the first step in the sorted list
+function prevStep() {
+    if (currentStepIndex > 0) {
+        hideStep(currentStepIndex); 
+        currentStepIndex--;
         showStep();
     }
+}
 
-    function nextStep() {
-        if (currentStep < steps.length - 1) {
-            steps[currentStep].classList.remove('highlight'); // Remove highlight from current step
-            currentStep++;
-            showStep();
-        } else {
-            endTour();
-        }
-    }
+function endTour() {
+    steps.forEach(step => getElementForStep(step.id).classList.remove('blurred', 'highlight'));
+    tooltip.style.display = 'none';
+}
 
-    function prevStep() {
-        if (currentStep > 0) {
-            steps[currentStep].classList.remove('highlight'); // Remove highlight from current step
-            currentStep--;
-            showStep();
-        }
-    }
+function showStep() {
+    steps.forEach(step => getElementForStep(step.id).classList.add('blurred')); // Blur all steps
+    const currentElement = getElementForStep(steps[currentStepIndex].id);
+    currentElement.classList.remove('blurred'); // Unblur the current step
+    currentElement.classList.add('highlight'); // Highlight the current step
 
-    function endTour() {
-        document.querySelectorAll('.tour-step').forEach(step => step.classList.remove('blurred'));
-        tooltip.style.display = 'none';
-        steps.forEach(step => step.classList.remove('highlight'));
-    }
+    // Update tooltip position and text
+    const rect = currentElement.getBoundingClientRect();
+    tooltip.style.top = `${rect.bottom + window.scrollY}px`;
+    tooltip.style.left = `${rect.left + window.scrollX}px`;
+    tooltipText.innerText = steps[currentStepIndex].text;
+    tooltip.style.display = 'block';
+}
 
-    function showStep() {
-        // Blur all tour steps except the current step
-        steps.forEach(step => step.classList.add('blurred'));
-        steps[currentStep].classList.remove('blurred');
+function hideStep(index) {
+    const element = getElementForStep(steps[index].id);
+    element.classList.remove('highlight');
+}
 
-        // Update tooltip position
-        const rect = steps[currentStep].getBoundingClientRect();
-        tooltip.style.top = `${rect.bottom + window.scrollY}px`;
-        tooltip.style.left = `${rect.left + window.scrollX}px`;
-
-        // Fetch tooltip text from data-step attribute
-        const stepNumber = steps[currentStep].getAttribute('data-step');
-
-        switch (stepNumber) {
-            case '1':
-                tooltipText.innerText = "Welcome to the challenge! This is the task you need to complete.";
-                break;
-            case '2':
-                tooltipText.innerText = "Check out the current levels and navigate to others to progress.";
-                break;
-            case '3':
-                tooltipText.innerText = "Use the hint label if you get stuck on any level.";
-                break;
-            case '4':
-                tooltipText.innerText = "This is the target element you need to create.";
-                break;
-            case '5':
-                tooltipText.innerText = "In the code editor (Code Mirror), write 'background-color' to assist you.";
-                break;
-            case '6':
-                tooltipText.innerText = "Click the 'Run' button to see if you've achieved your target.";
-                break;
-            case '7':
-                tooltipText.innerText = "Here is the styled element you've crafted!";
-                break;
-            case '8':
-                tooltipText.innerText = "Keep an eye on your score to track your progress.";
-                break;
-            default:
-                tooltipText.innerText = "Tooltip text for step " + stepNumber; // Default text if needed
-        }
-
-        tooltip.style.display = 'block';
-        steps[currentStep].classList.add('highlight'); // Add highlight to current step
-    }
+function getElementForStep(stepId) {
+    return document.getElementById(stepId);
 }

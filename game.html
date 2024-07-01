@@ -26,13 +26,13 @@
     <div class="outer-container"> 
         <button id="startTour">Start Tour</button>
         <section class="game-screen">
-            <div class="target-element tour-step" data-step="4">
+            <div id="target-element" class="target-element tour-step" >
                 <h1 class="title">your target Element</h1>
                 <div>
                     <div id="myDiv">This is the target element</div>
                 </div>
             </div>
-            <div class="styled-element tour-step" data-step="7">
+            <div id="styled-element" class="styled-element tour-step" >
                 <h1 class="title ">your styled Element</h1>
                 <div class="target">
                     <div id="toShow">
@@ -41,7 +41,7 @@
             </div>
 
             <div id="results"></div>
-            <div class="score-container tour-step" data-step="8">
+            <div id="score-tracker" class="score-container tour-step" >
                 <h2>Your Current Score</h2>
                 <div class="progress-bar">
                     <div class="progress" id="progress"></div>
@@ -56,7 +56,7 @@
                 <div>
                 <h1 class="title main">CSS Ninja Dojo</h1>
                 </div>
-                <div class="level-selection tour-step" data-step="2">
+                <div id="level-selection" class="level-selection tour-step" >
                     <button>
                         <span class="arrow-left">
                             <i class="fa-solid fa-angle-left"></i>
@@ -72,13 +72,13 @@
                     </button>
                 </div>
             </div>
-            <p class="label  tour-step" data-step="1" id="level-description"></p>
+            <p class="label  tour-step"  id="level-description"></p>
             <div class="box-container">
                 <div>
                     <h4 class="label">use these css styles to make the target</h4>
                     <ul class="label" id="css-tips"></ul>
                 </div>
-                <img id='hint-icon' src="./hintButton.png" alt="Hint Icon" class="hint-icon  tour-step" data-step="3">
+                <img id='hint-icon' src="./hintButton.png" alt="Hint Icon" class="hint-icon  tour-step" >
 
                 <div class="hidden" id="hintBar">
                     <div class="hint-bar-header">
@@ -112,10 +112,10 @@
                 </div>
             </div>
             <div class="code-container">
-                <div id="css-container" class=" tour-step" data-step="5">
+                <div id="css-container" class=" tour-step" >
                     <div id="css-code-editor"></div>
                 </div>
-                <button id="run-code" class="run-button tour-step" data-step="6">Run</button>
+                <button id="run-code" class="run-button tour-step" >Run</button>
             </div>
             <!-- code for modal -->
             <div id="modal" class="modal">
