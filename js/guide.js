@@ -72,7 +72,7 @@ function showStep() {
     // Position the tooltip above the "Run" button with increased margin for more top space
     if (steps[currentStepIndex].id === 'run-code') {
         tooltip.style.left = `${rect.left + window.scrollX}px`;
-        tooltip.style.top = `${rect.top + window.scrollY - tooltip.offsetHeight - 100}px`;
+        tooltip.style.top = `${rect.top + window.scrollY - tooltip.offsetHeight - 120}px`;
     } else {
         // Default positioning for other steps
         tooltip.style.left = `${rect.left + window.scrollX}px`;
