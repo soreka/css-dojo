@@ -264,16 +264,18 @@ function render (state) {
 
 document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
-
     let topic = localStorage.getItem('topic')
-    difficulty =  getDifficulty(topic)
-    challenge = feedChallange(1,topic,difficulty)
-    buildLevelsModal(topic,difficulty)
-    maxLines = Object.keys(challenge.styles).length
-    state.setState({topic,difficulty,challenge,maxLines})
+    let difficulty = getDifficulty(topic)
+    let challenge = feedChallange(1, topic, difficulty)
+    buildLevelsModal(topic, difficulty)
+    let maxLines = Object.keys(challenge.styles).length
+    state.setState({ topic, difficulty, challenge, maxLines })
 
+    // Initialize the tour
+    initializeTour();
   }, 0);
 });
+
 // Subscribe to state changes for debugging (optional)
 state.subscribe(newState => {
   console.log('State updated:', newState);

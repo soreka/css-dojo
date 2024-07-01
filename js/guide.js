@@ -1,6 +1,6 @@
 // JavaScript for Tour Guide
 
-document.addEventListener('DOMContentLoaded', function () {
+function initializeTour() {
     document.getElementById('startTour').onclick = function () {
         startTour();
     };
@@ -101,4 +101,4 @@ document.addEventListener('DOMContentLoaded', function () {
         tooltip.style.display = 'block';
         steps[currentStep].classList.add('highlight'); // Add highlight to current step
     }
-});
+}
