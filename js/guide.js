@@ -5,7 +5,7 @@ const steps = [
     { id: "level-selection", text: "Check out the current levels and navigate to others to progress." },
     { id: "hint-icon", text: "Use the hint label if you get stuck on any level." },
     { id: "target-element", text: "This is the target element you need to create." },
-    { id: "css-container", text: "In the code editor (Code Mirror), write 'background-color' to assist you." },
+    { id: "css-container", text: "Write any CSS properties in the code editor to style the target element." },
     { id: "run-code", text: "Click the 'Run' button to see if you've achieved your target." },
     { id: "styled-element", text: "Here is the styled element you've crafted!" },
     { id: "score-tracker", text: "Keep an eye on your score to track your progress." }
