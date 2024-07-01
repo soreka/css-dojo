@@ -7,33 +7,41 @@
     <!-- Create a simple CodeMirror instance -->
     <link rel="stylesheet" href="codemirror-5.65.16/lib/codemirror.css">
     <link rel="stylesheet" href="codemirror-5.65.16/addon/hint/show-hint.css">
-    
+
     <link rel="stylesheet" href="./styles/styles.css">
     <link rel="stylesheet" href="./styles/scoreBar.css">
     <link rel="stylesheet" href="./styles/hintBar.css">
-     <link rel="stylesheet" href="./codemirror-5.65.16/theme/xq-light.css">
+    <link rel="stylesheet" href="./codemirror-5.65.16/theme/xq-light.css">
     <link rel="stylesheet" href="./codemirror-5.65.16/theme/lucario.css">
     <link rel="stylesheet" href="./codemirror-5.65.16/addon/search/matchesonscrollbar.css">
     <script src="https://kit.fontawesome.com/686463c8ce.js" crossorigin="anonymous"></script>
 
 
     <title>CSS Game</title>
+ 
 </head>
 
 <body>
-    <div class="outer-container">
+
+    <div class="outer-container"> 
+        <button id="startTour">Start Tour</button>
         <section class="game-screen">
-            <h1 class="title">your target Element</h1>
-            <div>
-                <div id="myDiv">This is the target element</div>
+            <div id="target-element" class="target-element tour-step" >
+                <h1 class="title">your target Element</h1>
+                <div>
+                    <div id="myDiv">This is the target element</div>
+                </div>
             </div>
-            <h1 class="title">your styled Element</h1>
-            <div class="target">
-                <div id="toShow">
+            <div id="styled-element" class="styled-element tour-step" >
+                <h1 class="title ">your styled Element</h1>
+                <div class="target">
+                    <div id="toShow">
+                    </div>
+                </div>
             </div>
-            </div>
+
             <div id="results"></div>
-            <div class="score-container">
+            <div id="score-tracker" class="score-container tour-step" >
                 <h2>Your Current Score</h2>
                 <div class="progress-bar">
                     <div class="progress" id="progress"></div>
@@ -45,10 +53,10 @@
             style="background-image: url('./image-info.jpg');background-position: center; width: 100%;height: 100%;background-repeat:no-repeat;background-size: cover;">
             <div class="header" name="header">
 
-                <div>
-                    <h1 class="title main">CSS Ninja Dojo</h1>
+                <div id="cssBlur">
+                <h1 class="title main">CSS Ninja Dojo</h1>
                 </div>
-                <div class="level-selection">
+                <div id="level-selection" class="level-selection tour-step" >
                     <button>
                         <span class="arrow-left">
                             <i class="fa-solid fa-angle-left"></i>
@@ -64,34 +72,38 @@
                     </button>
                 </div>
             </div>
-            <p class="label" id="level-description"></p>
+            <p class="label  tour-step"  id="level-description"></p>
             <div class="box-container">
-                <div>
+                <div id="cssBlur">
                     <h4 class="label">use these css styles to make the target</h4>
                     <ul class="label" id="css-tips"></ul>
                 </div>
-                <img id='hint-icon'src="./hintButton.png" alt="Hint Icon" class="hint-icon">
-                
-                <div  class="hidden" id="hintBar" >
+                <img id='hint-icon' src="./hintButton.png" alt="Hint Icon" class="hint-icon  tour-step" >
+
+                <div class="hidden" id="hintBar">
                     <div class="hint-bar-header">
-                        <div class="hint-tracker" id="hintTracker">1-5</div>
+                        <div class="hint-tracker " id="hintTracker">1-5</div>
                         <div class="svg-container">
-                            <svg id="lamp-icon" class="svg-icon lamp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <svg id="lamp-icon" class="svg-icon lamp-icon" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24">
                                 <title>lightbulb-on-10</title>
-                                <path d="M1 11H4V13H1V11M19.1 3.5L17 5.6L18.4 7L20.5 4.9L19.1 3.5M11 1H13V4H11V1M4.9 3.5L3.5 4.9L5.6 7L7 5.6L4.9 3.5M10 22C10 22.6 10.4 23 11 23H13C13.6 23 14 22.6 14 22V21H10V22M12 6C8.7 6 6 8.7 6 12C6 14.2 7.2 16.2 9 17.2V19C9 19.6 9.4 20 10 20H14C14.6 20 15 19.6 15 19V17.2C16.8 16.2 18 14.2 18 12C18 8.7 15.3 6 12 6M13 15.9V17H11V15.9C9.3 15.5 8 13.9 8 12C8 9.8 9.8 8 12 8S16 9.8 16 12C16 13.9 14.7 15.4 13 15.9M20 11H23V13H20V11Z"/>
+                                <path
+                                    d="M1 11H4V13H1V11M19.1 3.5L17 5.6L18.4 7L20.5 4.9L19.1 3.5M11 1H13V4H11V1M4.9 3.5L3.5 4.9L5.6 7L7 5.6L4.9 3.5M10 22C10 22.6 10.4 23 11 23H13C13.6 23 14 22.6 14 22V21H10V22M12 6C8.7 6 6 8.7 6 12C6 14.2 7.2 16.2 9 17.2V19C9 19.6 9.4 20 10 20H14C14.6 20 15 19.6 15 19V17.2C16.8 16.2 18 14.2 18 12C18 8.7 15.3 6 12 6M13 15.9V17H11V15.9C9.3 15.5 8 13.9 8 12C8 9.8 9.8 8 12 8S16 9.8 16 12C16 13.9 14.7 15.4 13 15.9M20 11H23V13H20V11Z" />
                             </svg>
                         </div>
                         <div class="svg-container">
-                            <svg id="drop-down-icon" class="svg-icon drop-down-icon" id="toggleButton" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <svg id="drop-down-icon" class="svg-icon drop-down-icon" id="toggleButton"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <title>menu-down</title>
-                                <path d="M7,10L12,15L17,10H7Z"/>
+                                <path d="M7,10L12,15L17,10H7Z" />
                             </svg>
                         </div>
                     </div>
-                    
+
                     <div class="body-container" id="hintContent">
-                        <div id="hint-bar-title" class="hint-bar-title">Hints!</div>
-                        <p class="hint-description" id="hintText">Set the background color of the box to blue.</p>
+                        <div id="hint-bar-title" class=" hint-bar-title">Hints!</div>
+                        <p class="hint-description" id="hintText">Set the background color of
+                            the box to blue.</p>
                         <div class="hint-bar-button-container">
                             <button id="leftArrow" class="hint-move-button">NEXT</button>
                             <button id="rightArrow" class="hint-move-button">PREV</button>
@@ -100,10 +112,10 @@
                 </div>
             </div>
             <div class="code-container">
-                <div id="css-container">
+                <div id="css-container" class=" tour-step" >
                     <div id="css-code-editor"></div>
                 </div>
-                <button id="run-code" class="run-button">Run</button>
+                <button id="run-code" class="run-button tour-step" >Run</button>
             </div>
             <!-- code for modal -->
             <div id="modal" class="modal">
@@ -118,6 +130,16 @@
 
         </section>
     </div>
+    <div id="tourTooltip" class="tooltip">
+        <p id="tooltipText"></p>
+        <button id="prevStep">Prev</button>
+        <button id="skipTour">Skip</button>
+        <button id="nextStep">Next</button>
+    </div>
+   
+
+
+    </script>
     <script src="codemirror-5.65.16/lib/codemirror.js"></script>
     <script src="codemirror-5.65.16/mode/css/css.js"></script>
     <script src="codemirror-5.65.16/addon/hint/show-hint.js"></script>
@@ -128,6 +150,8 @@
     <!-- <script src="codemirror-5.65.16/addon/edit/closetag.js"></script> -->
     <script type="module" src="./js/index.js"></script>
     <script type="module" src="./js/ChallangeSelector.js"></script>
+    <script src="./js/guide.js"></script>
+
 </body>
 
 </html>
