@@ -2,7 +2,7 @@
 
 
 export function initializeGuideTour() {
-    const startGuideModal = document.getElementById('startGuideModal');
+    const startGuideModal = document.getElementById('startTheGuide');
     const skipGuideButton = document.getElementById('skipGuide');
     const startGuideButton = document.getElementById('startGuide');
 
@@ -41,10 +41,12 @@ let currentStepIndex = 0;
 const tooltip = document.getElementById('tourTooltip');
 const tooltipText = document.getElementById('tooltipText');
 
+// Starts the guided tour by showing the first step.
 function startTour() {
     showStep();
 }
 
+// Advances the tour to the next step.
 function nextStep() {
     if (currentStepIndex < steps.length - 1) {
         removeHighlight(currentStepIndex);
@@ -55,6 +57,7 @@ function nextStep() {
     }
 }
 
+// Moves the tour back to the previous step.
 function prevStep() {
     if (currentStepIndex > 0) {
         removeHighlight(currentStepIndex);
@@ -63,17 +66,21 @@ function prevStep() {
     }
 }
 
+// Ends the tour and removes all highlights and tooltips.
 function endTour() {
     document.querySelectorAll('.blurred').forEach(el => el.classList.remove('blurred'));
     document.querySelectorAll('.highlight').forEach(el => el.classList.remove('highlight'));
     tooltip.style.display = 'none';
 }
 
+// Removes the highlight from the element associated with the given step index.
 function removeHighlight(index) {
     const element = getElementForStep(steps[index].id);
     element.classList.remove('highlight');
 }
 
+
+// Shows the current step in the tour, highlighting the relevant element and displaying the tooltip.
 function showStep() {
     const tool = document.getElementById('tourTooltip');
     blurAllExceptCurrent();
@@ -88,7 +95,7 @@ function showStep() {
     // Position the tooltip above the "Run" button with increased margin for more top space
     if (steps[currentStepIndex].id === 'run-code') {
         tooltip.style.left = `${rect.left + window.scrollX}px`;
-        tooltip.style.top = `${rect.top + window.scrollY - tooltip.offsetHeight - 120}px`;
+        tooltip.style.top = `${rect.top + window.scrollY - tooltip.offsetHeight}px`;
     } else {
         // Default positioning for other steps
         tooltip.style.left = `${rect.left + window.scrollX}px`;
@@ -101,6 +108,8 @@ function showStep() {
     }
 }
 
+
+// Blurs all elements except the current step element and its ancestors.
 function blurAllExceptCurrent() {
     const currentStepId = steps[currentStepIndex].id;
     const currentElement = getElementForStep(currentStepId);
@@ -124,6 +133,7 @@ function blurAllExceptCurrent() {
     }
 }
 
+// Retrieves the DOM element associated with a given step ID.
 function getElementForStep(stepId) {
     return document.getElementById(stepId);
 }

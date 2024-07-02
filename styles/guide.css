@@ -68,7 +68,7 @@
 }
 
 
-.modalGuide {
+.Guide {
     display: none; 
     position: fixed; 
     z-index: 1000; 
@@ -81,7 +81,7 @@
     text-align: center;
 }
 
-.modalGuide .modal-content {
+.guide-content{
     background-color: #fffbec;
     margin: 15% auto; 
     padding: 20px;
@@ -94,9 +94,9 @@
     margin: 10px;
 }
 
-.modalGuide p{
+.Guide p{
     font-size: 20px;
 }
-.modalGuide p span{
+.Guide p span{
     font-size: 35px;
 }
