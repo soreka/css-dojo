@@ -35,10 +35,11 @@ html,body{
     display: flex;
     flex-flow: row wrap;
     justify-content:space-around;
-    align-content: space-between;
+    align-content: center;
     align-items: center;
     width: 100%;
     padding: 3%;
+    flex-direction: column;
 }
 
 .title{
@@ -47,6 +48,16 @@ html,body{
     font-size:50px;
     color: #000000;
 }
+
+.target-element,
+.styled-element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 10px;
+}
+
 .main{font-size: xx-la;
     color: #f8f8f8;
     margin-top: 70px;
