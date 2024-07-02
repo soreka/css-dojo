@@ -1,7 +1,33 @@
 // JavaScript for Tour Guide
 
+
+export function initializeGuideTour() {
+    const startGuideModal = document.getElementById('startGuideModal');
+    const skipGuideButton = document.getElementById('skipGuide');
+    const startGuideButton = document.getElementById('startGuide');
+
+    // Show the modal
+    startGuideModal.style.display = 'block';
+
+    // Event listener for the "Skip" button
+    skipGuideButton.onclick = () => {
+        startGuideModal.style.display = 'none';
+    };
+
+    // Event listener for the "Start" button
+    startGuideButton.onclick = () => {
+        startGuideModal.style.display = 'none';
+        startTour();
+    };
+
+    document.getElementById('startTour').onclick = startTour;
+    document.getElementById('nextStep').onclick = nextStep;
+    document.getElementById('prevStep').onclick = prevStep;
+    document.getElementById('skipTour').onclick = endTour;
+}
+
 const steps = [
-    { id: "level-description", text: "Welcome to the challenge! This is the task you need to complete." },
+    { id: "level-description", text: "This is the task you need to complete." },
     { id: "level-selection", text: "Check out the current levels and navigate to others to progress." },
     { id: "hint-icon", text: "Use the hint label if you get stuck on any level." },
     { id: "target-element", text: "This is the target element you need to create." },
@@ -15,21 +41,12 @@ let currentStepIndex = 0;
 const tooltip = document.getElementById('tourTooltip');
 const tooltipText = document.getElementById('tooltipText');
 
-function initializeTour() {
-    document.getElementById('startTour').onclick = startTour;
-    document.getElementById('nextStep').onclick = nextStep;
-    document.getElementById('prevStep').onclick = prevStep;
-    document.getElementById('skipTour').onclick = endTour;
-}
-
 function startTour() {
-    //currentStepIndex = 0;
     showStep();
 }
 
 function nextStep() {
     if (currentStepIndex < steps.length - 1) {
-        endTour();
         removeHighlight(currentStepIndex);
         currentStepIndex++;
         showStep();
@@ -40,7 +57,6 @@ function nextStep() {
 
 function prevStep() {
     if (currentStepIndex > 0) {
-        endTour();
         removeHighlight(currentStepIndex);
         currentStepIndex--;
         showStep();
@@ -80,11 +96,10 @@ function showStep() {
     }
 
     tooltip.style.display = 'block';
-    for (child of tool.children) {
+    for (const child of tool.children) {
         child.classList.remove('blurred');
     }
 }
-
 
 function blurAllExceptCurrent() {
     const currentStepId = steps[currentStepIndex].id;
@@ -109,9 +124,6 @@ function blurAllExceptCurrent() {
     }
 }
 
-
-
 function getElementForStep(stepId) {
     return document.getElementById(stepId);
 }
-

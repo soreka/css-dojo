@@ -1,20 +1,22 @@
 import { feedChallange } from "./challangeCreator.js"
-import {compareStylesHandler} from "./scoreBar.js"
-import {addBasicStyles,cssObjToTxt} from "./challangeCreator.js"
-import {buildLevelsModal} from "./ChallangeSelector.js"
+import { compareStylesHandler } from "./scoreBar.js"
+import { addBasicStyles, cssObjToTxt } from "./challangeCreator.js"
+import { buildLevelsModal } from "./ChallangeSelector.js"
 import challenges from './challanges.js'
 import { createState } from "./stateManager/stateManager.js"
+import { initializeGuideTour } from './guide.js';
+
 
 const initialState = {
-  topic:null,
-  difficulty:null,
-  challenge:null,
-  maxLines:0
+  topic: null,
+  difficulty: null,
+  challenge: null,
+  maxLines: 0
 }
 
 export const state = createState(initialState)
 
-var maxLines = 0 
+var maxLines = 0
 var challenge = null
 var difficulty = null
 var widgetEditor;
@@ -41,14 +43,14 @@ function subtractObjects(obj1, obj2) {
   return result;
 }
 
-function prepareStaticStyle (challange) {
+function prepareStaticStyle(challange) {
   let fromLine = 0
   let toLine = 0
   let styleObj = {}
-  let convertedTypeStyles = {...challange.styles} ;
+  let convertedTypeStyles = { ...challange.styles };
   convertedTypeStyles = styleStringToObject(cssObjToTxt(convertedTypeStyles))
   styleObj = addBasicStyles(styleObj)
-  styleObj = subtractObjects(styleObj,convertedTypeStyles)
+  styleObj = subtractObjects(styleObj, convertedTypeStyles)
 
 
   let formattedString = '.yourStyle{\n';
@@ -56,18 +58,18 @@ function prepareStaticStyle (challange) {
   for (let key in styleObj) {
     if (styleObj.hasOwnProperty(key)) {
       formattedString += `       ${key}: ${styleObj[key]};\n`;
-      fromLine += 1 
+      fromLine += 1
     }
   }
   toLine = fromLine
-  for(let key in challange.styles ){
+  for (let key in challange.styles) {
     formattedString += `\n`
-    toLine += 1 
+    toLine += 1
   }
   fromLine += 1
-  let linesObj = {fromLine:fromLine,toLine:toLine}
+  let linesObj = { fromLine: fromLine, toLine: toLine }
   formattedString += '\n}';
-  return {format:formattedString,linesObj:linesObj};
+  return { format: formattedString, linesObj: linesObj };
 }
 
 
@@ -110,26 +112,26 @@ function addMultiLineWidget(editor, fromLine, toLine) {
     lineWrapping: true,
     lineNumbers: false,
     styleActiveLine: true,
-    highlightSelectionMatches: {showToken: /\w/},
+    highlightSelectionMatches: { showToken: /\w/ },
     scrollbarStyle: null,
     readOnly: false, // The widget itself should be editable
     extraKeys: {
       "Ctrl-Space": "autocomplete",
-      "Enter": function(cm) {
-          var lineCount = cm.lineCount();
-           // Set your desired maximum number of lines
-          if (lineCount >= maxLines) {
-              return; // Prevent adding a new line
-          }
-          cm.execCommand('newlineAndIndent'); // Allow adding a new line if limit is not reached
+      "Enter": function (cm) {
+        var lineCount = cm.lineCount();
+        // Set your desired maximum number of lines
+        if (lineCount >= maxLines) {
+          return; // Prevent adding a new line
+        }
+        cm.execCommand('newlineAndIndent'); // Allow adding a new line if limit is not reached
       }
-      },
-    hintOptions: {completeSingle: false},
+    },
+    hintOptions: { completeSingle: false },
 
   });
-  widgetEditor.on("inputRead", function(cm, event) {
+  widgetEditor.on("inputRead", function (cm, event) {
     if (!cm.state.completionActive && event.text.length > 0) { // Perform autocomplete only when not already active and text input is not empty
-        CodeMirror.showHint(cm, CodeMirror.hint.css, {completeSingle: false});
+      CodeMirror.showHint(cm, CodeMirror.hint.css, { completeSingle: false });
     }
   });
 
@@ -150,7 +152,7 @@ function addMultiLineWidget(editor, fromLine, toLine) {
 //////////
 function createStyle(cssObj) {
   const viewElement = document.getElementById('toShow')
-  Object.assign(viewElement.style,cssObj) 
+  Object.assign(viewElement.style, cssObj)
 }
 
 
@@ -161,10 +163,10 @@ function runCode() {
   targetStyle = styleStringToObject(cssObjToTxt(targetStyle))
   let playerStyle = widgetEditor.getValue()
   playerStyle = styleStringToObject(playerStyle)
-  compareStylesHandler(targetStyle ,playerStyle )
+  compareStylesHandler(targetStyle, playerStyle)
   let styleObj = addBasicStyles(playerStyle)
-  styleObj = subtractObjects(styleObj,targetStyle)
-  let playerEndStyle = {...styleObj,...playerStyle}
+  styleObj = subtractObjects(styleObj, targetStyle)
+  let playerEndStyle = { ...styleObj, ...playerStyle }
   createStyle(playerEndStyle);
 }
 
@@ -173,63 +175,63 @@ function toggleHintBar(e) {
   var hiddenElement = document.getElementById('hintBar');
   var iconElement = document.getElementById('hint-icon')
   if (hiddenElement.classList.contains('hidden')) {
-      //hide
-      iconElement.classList.remove('hint-icon')
-      iconElement.classList.add('hidden')
-      //show
-      hiddenElement.classList.remove('hidden');
-      hiddenElement.classList.add('hint-bar-outer-container')
+    //hide
+    iconElement.classList.remove('hint-icon')
+    iconElement.classList.add('hidden')
+    //show
+    hiddenElement.classList.remove('hidden');
+    hiddenElement.classList.add('hint-bar-outer-container')
   } else {
-      //hide
-      hiddenElement.classList.remove('hint-bar-outer-container')
-      hiddenElement.classList.add('hidden');
-      //show 
-      iconElement.classList.remove('hidden')
-      iconElement.classList.add('hint-icon')
+    //hide
+    hiddenElement.classList.remove('hint-bar-outer-container')
+    hiddenElement.classList.add('hidden');
+    //show 
+    iconElement.classList.remove('hidden')
+    iconElement.classList.add('hint-icon')
   }
 }
 //hint bar toggle 
-document.getElementById('hint-icon').addEventListener('click',toggleHintBar);
-document.getElementById('drop-down-icon').addEventListener('click',toggleHintBar);
+document.getElementById('hint-icon').addEventListener('click', toggleHintBar);
+document.getElementById('drop-down-icon').addEventListener('click', toggleHintBar);
 //hint bar right left buttons
-document.getElementById('leftArrow').addEventListener('click',changeHint)
-document.getElementById('rightArrow').addEventListener('click',changeHint)
+document.getElementById('leftArrow').addEventListener('click', changeHint)
+document.getElementById('rightArrow').addEventListener('click', changeHint)
 
 
 
 
 
-function changeHint (e) {
+function changeHint(e) {
   const hintRange = document.getElementById('hintTracker')
   let index = String(hintRange.textContent).split('-')[0]
   index = Number(index)
-  if(e.target.textContent === 'NEXT' && challenge.hints.length > index ){
-     displayHint(challenge.hints,index+1)
-   }
-   
-   if(e.target.textContent === 'PREV'&& 0 < (index - 1) ){
+  if (e.target.textContent === 'NEXT' && challenge.hints.length > index) {
+    displayHint(challenge.hints, index + 1)
+  }
+
+  if (e.target.textContent === 'PREV' && 0 < (index - 1)) {
     displayHint(challenge.hints, index - 1)
-   }
+  }
 }
 
 
 
-function displayHint (hints,lvl = 1) {
-    const hintDescription = document.getElementById('hintText')
-    const hintRange = document.getElementById('hintTracker')
-    const hintTitle =document.getElementById("hint-bar-title")
-    
-    let hint = hints[lvl -1]
-    let hintTitleNumber  = hint.split(':')[0]
-    let hintText = hint.split(':')[1]
-    //clear html elements
-    hintTitle.innerHTML = ''
-    hintDescription.innerHTML = ''
-    hintRange.innerHTML = ''
-    //fill elements
-    hintTitle.textContent = hintTitleNumber
-    hintDescription.textContent = hintText
-    hintRange.textContent = `${lvl} - ${hints.length}`
+function displayHint(hints, lvl = 1) {
+  const hintDescription = document.getElementById('hintText')
+  const hintRange = document.getElementById('hintTracker')
+  const hintTitle = document.getElementById("hint-bar-title")
+
+  let hint = hints[lvl - 1]
+  let hintTitleNumber = hint.split(':')[0]
+  let hintText = hint.split(':')[1]
+  //clear html elements
+  hintTitle.innerHTML = ''
+  hintDescription.innerHTML = ''
+  hintRange.innerHTML = ''
+  //fill elements
+  hintTitle.textContent = hintTitleNumber
+  hintDescription.textContent = hintText
+  hintRange.textContent = `${lvl} - ${hints.length}`
 }
 
 
@@ -239,7 +241,7 @@ const myButton = document.getElementById("run-code");
 myButton.onclick = runCode;
 //////////////
 // var challenge = null
-function render (state) {
+function render(state) {
   const challenge = state.challenge
   //clean Score bar
   const progressElement = document.getElementById("progress");
@@ -251,11 +253,11 @@ function render (state) {
   //clean player Styled Element 
   const playerStyledElement = document.getElementById('toShow')
   playerStyledElement.style = ''
-  
-  displayHint(challenge.hints,1)
-  const { format , linesObj:{fromLine,toLine} } = prepareStaticStyle(challenge)
+
+  displayHint(challenge.hints, 1)
+  const { format, linesObj: { fromLine, toLine } } = prepareStaticStyle(challenge)
   cssCodeMirror.setValue(format)
-  addMultiLineWidget(cssCodeMirror,fromLine,toLine)
+  addMultiLineWidget(cssCodeMirror, fromLine, toLine)
 
 }
 
@@ -270,9 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
     buildLevelsModal(topic, difficulty)
     let maxLines = Object.keys(challenge.styles).length
     state.setState({ topic, difficulty, challenge, maxLines })
-
-    // Initialize the tour
-    initializeTour();
+    initializeGuideTour();    // Initialize the guide tour 
   }, 0);
 });
 
@@ -284,10 +284,10 @@ state.subscribe(newState => {
 state.subscribe(render)
 
 
-function getDifficulty (topic) {
+function getDifficulty(topic) {
   let difficulties = Object.keys(challenges)
-  for(let diff of difficulties){
-    if(Object.keys(challenges[diff]).includes(topic)){
+  for (let diff of difficulties) {
+    if (Object.keys(challenges[diff]).includes(topic)) {
       return diff
     }
   }
@@ -302,12 +302,12 @@ export function styleStringToObject(styleString) {
   const styleArray = styleString.split(';');
 
   styleArray.forEach(style => {
-      const [key, value] = style.split(':');
-      if (key && value) {
-          const trimmedKey = key.trim();
-          const trimmedValue = value.trim();
-          result[trimmedKey] = trimmedValue;
-      }
+    const [key, value] = style.split(':');
+    if (key && value) {
+      const trimmedKey = key.trim();
+      const trimmedValue = value.trim();
+      result[trimmedKey] = trimmedValue;
+    }
   });
 
   return result;
@@ -326,11 +326,11 @@ function customCSSHint(cm, options) {
 
   // Adjust hint positions to ensure proper suggestions
   if (inner && inner.list && inner.list.length > 0) {
-      return {
-          list: inner.list,
-          from: CodeMirror.Pos(cursor.line, start),
-          to: CodeMirror.Pos(cursor.line, end)
-      };
+    return {
+      list: inner.list,
+      from: CodeMirror.Pos(cursor.line, start),
+      to: CodeMirror.Pos(cursor.line, end)
+    };
   }
   return inner;
 }

@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/guide.css">
+
     <!-- Create a simple CodeMirror instance -->
     <link rel="stylesheet" href="codemirror-5.65.16/lib/codemirror.css">
     <link rel="stylesheet" href="codemirror-5.65.16/addon/hint/show-hint.css">
@@ -24,7 +26,7 @@
 <body>
 
     <div class="outer-container"> 
-        <button id="startTour">Start Tour</button>
+        <button id="startTour">Start game guide</button>
         <section class="game-screen">
             <div id="target-element" class="target-element tour-step" >
                 <h1 class="title">your target Element</h1>
@@ -136,7 +138,13 @@
         <button id="skipTour">Skip</button>
         <button id="nextStep">Next</button>
     </div>
-   
+    <div id="startGuideModal" class="modalGuide">
+        <div class="modal-content">
+            <p id="endGameText"><span>Welcome to the css ninja dojo challenges!</span><br><br> let's guide you through the game, if you are familiar with the game, press skip</p>
+            <button id="startGuide">Start</button>
+            <button id="skipGuide">Skip</button>
+        </div>
+    </div>
 
 
     </script>
@@ -150,7 +158,7 @@
     <!-- <script src="codemirror-5.65.16/addon/edit/closetag.js"></script> -->
     <script type="module" src="./js/index.js"></script>
     <script type="module" src="./js/ChallangeSelector.js"></script>
-    <script src="./js/guide.js"></script>
+    <script type="module" src="./js/guide.js"></script>
 
 </body>
 
